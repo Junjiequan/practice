@@ -1,4 +1,61 @@
+*{ margin:0; padding:0; border:0;}
+body {
+    background-color:rgb(167, 118, 118);
+}
+a {
+    text-decoration:none;
+}
+#random-bgcolor {
+    transition : background-color 1s ease
+}
 .content {
-    background-color:azure;
-    height: 100%vh;
+    max-width:400px;
+    width:100%;
+    min-height:150px;
+    height:auto;
+    margin: 15% auto;
+    border-radius:5px;
+    background-color:white;
+    padding: 1.2em 1.2em;
+}
+#quote-box{
+    padding: 1em;
+
+}
+span#text {
+    font-size:1.7em;
+    text-align:center;
+}
+span#author{
+    display:block;
+    text-align:right;
+}
+.fa-quote-left{
+    font-size:2em;
+    padding-right:0.4em;
+
+}
+#button-box{
+    display:block;
+    align-content:center;
+    padding: 1.3em 0;
+}
+.fa-twitter .fa-twitch{
+    font-size:1.5em;
+}
+.button, #button{
+    background-color:rgb(14, 39, 87);
+    padding: 0.6em 0.6em;
+    border-radius:2px;
+    color:white;
+    transition: all .2s ease-in-out;
+}
+.button:hover,
+#button:hover{
+    transform: scale(1.2)
+}
+#new-quote{
+    float: right;
+    padding-left:1em;
+    padding-right:1em;
 }
