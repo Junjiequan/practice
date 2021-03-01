@@ -30,8 +30,21 @@ class APP extends React.Component{
         }
     }
     render(){
-        const {quotes, index} = this.state;
-        const article = quotes[index];
+        const colors = [
+            '#16a085',
+            '#27ae60',
+            '#2c3e50',
+            '#f39c12',
+            '#e74c3c',
+            '#9b59b6',
+            '#FB6964',
+            '#342224',
+            '#472E32',
+            '#BDBB99',
+            '#77B1A9',
+            '#73A857'
+          ];
+        const article = this.state.quotes[this.state.index];
         const tweetlink = `https://twitter.com/intent/tweet?text=${article.quote} - ${article.author}`;
         const facebook = 'https://www.youtube.com/watch?v=iGWei_0EJIc'
         
