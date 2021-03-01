@@ -17,7 +17,14 @@ const randomcolors = () =>{
     texts.setAttribute('style', 'color: ${randomizer}');
 }
 
-// get Quote
-const Quote = (data) => {
-    const callback = 'displayQuote'
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.querySelector('button')
+})
+async (getQuote) => {
+    
+    const response = await fetch(link);
+    const data = await response.json();
+        if (response.ok) {
+
+        }
 }
