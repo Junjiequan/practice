@@ -2,20 +2,25 @@ const API = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32b
 
 class APP extends React.Component{
     state = {
-        quotes:[],
+        quotes:[
+            {
+                quote: "life is not easy",
+                author: "randome guy"
+            }
+        ],
         index:0
     }
-    componentDidMount(){
+    componentDidMount=()=>{
         fetch(API)
         .then(result => result.json())
         .then(result => {
             this.setState({
                 quotes: result.quotes
-            }, this.getRandomIndex)
+            })
         });
     }
-    getRandomIndex(){
-        const { quotes } = this.state;
+    getRandomIndex =()=>{
+        const {quotes} = this.state;
         
         if(quotes.length > 0){
             const index = Math.floor(Math.random() * quotes.length);
@@ -26,7 +31,9 @@ class APP extends React.Component{
     }
     render(){
         const {quotes, index} = this.state;
-        const article = quotes[index]
+        const article = quotes[index];
+        const tweetlink = `https://twitter.com/intent/tweet?text=${article.quote} - ${article.author}`;
+        const facebook = 'https://www.youtube.com/watch?v=iGWei_0EJIc'
         
         return (
             <div className="d-flex justify-content-center vh-100 align-items-center">
@@ -34,12 +41,15 @@ class APP extends React.Component{
                         {article && (
                             <div id="boxSize" >
                                 <p>{article.quote}</p>
-                                <cite id="author">{article.author}</cite>
+                                <cite id="author">- {article.author}</cite>
                             </div>
                         )}
                         <div className="d-flex justify-content-between">
-                            <a className="btn btn-primary" href="#" target="_blank">twitter</a>
-                            <button className="btn btn-primary">Get Quote</button>
+                            <div >
+                            <a className="btn btn-primary " href={tweetlink} target="_blank"><i className="fab fa-twitter"></i></a>
+                            <a className="btn btn-primary ms-1" href={facebook} target="_blank"><i className="fab fa-youtube"></i></a>
+                            </div>
+                            <button className="btn btn-primary" onClick={this.getRandomIndex.bind(this)}>Get Quote</button>
                         </div>
                 </div>
             </div>
