@@ -26,7 +26,7 @@ class APP extends React.Component{
         bgColor: '#BDBB99'
     }
 
-    componentDidMount=()=>{
+    componentDidMount(){
         fetch(API)
         .then(result => result.json())
         .then(result => {
@@ -35,7 +35,7 @@ class APP extends React.Component{
             })
         });
     }
-getRandomIndex = () =>{
+getRandomIndex(){
         const {quotes} = this.state;
         
         if(quotes.length > 0){
