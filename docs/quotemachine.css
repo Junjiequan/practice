@@ -16,15 +16,17 @@ body{
 .box {
     background-color:white;
 }
+
 .quote-box{
-    max-width:500px;
+    width:90vw;
 
 }
-@media (max-width:600px){
+@media only screen and (min-width:768px){
     .quote-box {
-        min-width:90vw;
+        max-width:500px;
     }
 }
+
 #boxSize{
     margin-bottom:1em;
 }
