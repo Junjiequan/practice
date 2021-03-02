@@ -77,7 +77,7 @@ getRandomColor = () =>{
         const tweetlink = `https://twitter.com/intent/tweet?text=${article.quote} - ${article.author}`;
         const facebook = 'https://www.youtube.com/watch?v=iGWei_0EJIc';
         return (
-            <div className="d-flex justify-content-center vh-100 align-items-center">
+            <div className="d-flex justify-content-center vh-100 align-items-center vw-90">
                 <div className="col-6 p-4 box rounded quote-box">
                         {article && (
                             <div id="boxSize" >
