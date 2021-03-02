@@ -18,7 +18,12 @@ body{
 }
 .quote-box{
     max-width:500px;
-    min-width:400px;
+
+}
+@media (max-width:600px){
+    .quote-box {
+        min-width:90vw;
+    }
 }
 #boxSize{
     margin-bottom:1em;
