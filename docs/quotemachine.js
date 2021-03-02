@@ -15,48 +15,42 @@ const colors = [
   ];
 
 class APP extends React.Component{
-    state = {
-        quotes:[
-            {
-                quote: "life is not easy",
-                author: "randome guy"
-            }
-        ],
+    constructor(props){
+        super(props);
+    this.state = {
+        quotes: [0],
         index:0,
         bgColor: '#BDBB99'
     }
-
-    componentDidMount(){
-        fetch(API)
-        .then(result => result.json())
-        .then(result => {
-            this.setState({
-                quotes: result.quotes
-            })
-        });
-    }
+}
+componentDidMount(){
+    fetch(API)
+    .then(result => result.json())
+    .then(result => {
+        this.setState({
+            quotes: result.quotes
+        })
+    });
+}
 getRandomIndex(){
         const {quotes} = this.state;
-        
-        if(quotes.length > 0){
-            const index = Math.floor(Math.random() * quotes.length);
-            this.setState({
-                index
-            })
-        }
+        const index = Math.floor(Math.random() * quotes.length);
+        this.setState({
+             index
+          })
     }
-    componentDidUpdate(){
-        const {bgColor} = this.state;
-        const bodybg = document.querySelector("body");
-        bodybg.style.backgroundColor = bgColor;
-        const btnbg = document.querySelector("button");
-        btnbg.style.backgroundColor = bgColor;
-        const abg = document.querySelector("a");
-        abg.style.backgroundColor = bgColor;
-        const pcolor = document.querySelector("p");
-        pcolor.style.color = bgColor;
-        const citecolor = document.querySelector("cite");
-        citecolor.style.color = bgColor;
+componentDidUpdate(){
+    const {bgColor} = this.state;
+    const bodybg = document.querySelector("body");
+    bodybg.style.backgroundColor = bgColor;
+    const btnbg = document.querySelector("button");
+    btnbg.style.backgroundColor = bgColor;
+    const abg = document.querySelector("a");
+    abg.style.backgroundColor = bgColor;
+    const pcolor = document.querySelector("p");
+    pcolor.style.color = bgColor;
+    const citecolor = document.querySelector("cite");
+    citecolor.style.color = bgColor;
 }  
 getRandomColor = () =>{
     const bgColor = this.state;
@@ -67,12 +61,11 @@ getRandomColor = () =>{
         })
     }
 }
- wrapperFunction = () => {
-        this.getRandomIndex();
-        this.getRandomColor();
-     }
+wrapperFunction = () => {
+    this.getRandomIndex();
+    this.getRandomColor();
+}
     render(){
-       
         const article = this.state.quotes[this.state.index];
         const tweetlink = `https://twitter.com/intent/tweet?text=${article.quote} - ${article.author}`;
         const facebook = 'https://www.youtube.com/watch?v=iGWei_0EJIc';
