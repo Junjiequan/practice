@@ -78,7 +78,7 @@ getRandomColor = () =>{
         const facebook = 'https://www.youtube.com/watch?v=iGWei_0EJIc';
         return (
             <div className="d-flex justify-content-center vh-100 align-items-center vw-90">
-                <div className="col-6 p-4 box rounded quote-box">
+                <div className="p-4 box rounded quote-box">
                         {article && (
                             <div id="boxSize" >
                                 <p><span className="fs-2 me-2"><i className="fa fa-quote-left"></i></span>{article.quote}</p>
@@ -93,6 +93,7 @@ getRandomColor = () =>{
                         </div>
                 </div>
             </div>
+            
         )
     }
 
