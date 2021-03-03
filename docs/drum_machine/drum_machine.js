@@ -12,7 +12,7 @@ class App extends React.Component{
 
             return (
                 <div class="button"></div>
-                <div class="control"></div>
+                <div class="control"></div ;>
             )
         }
 
