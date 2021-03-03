@@ -1,4 +1,4 @@
-`Unfortunately there's no such a vocabulary called "impossible" in my dictionary.`
+`Unfortunately there's no such a word called "impossible" in my dictionary.`
 
 **Front End Libraries's Projects - link:**
 
