@@ -56,19 +56,27 @@ const audioClips = [
   ];
 
 const App = () =>{
+  
     return (
     <div className="min-vh-100 text-white d-flex align-items-center justify-content-center">
         <div className="text-center col-7 bg-secondary">
             <h2 className="text-white">HIT THE BUTTON</h2>
             {audioClips.map((clip)=> (
-             <Pad key={clip.id} clip={clip}/>
-               ))}
+             <Pad key={clip.id} clip={clip}/>  ))}
+             {/* 
+             //  (clip) = audioClips -> [ 0,1,2,3,4]  -> 
+             // [0] = {keyCode: 67,keyTrigger : 'C', id : 'handsome', url: ''
+             // so if we call {clip.id} then it calls 'handsome'
+             // likewise, clip = {clip} calls the entire value of an array [0]  = {keyCode, keyTrigger, etc.,} 
+             */}
+               
         </div>
     </div> 
     )
 }
 const Pad= ({clip})=>{
 
+    /* ===== this part is a bit hard to digest*/
     const [active, setActive] = React.useState(false);
 
     React.useEffect(()=>{
@@ -76,12 +84,13 @@ const Pad= ({clip})=>{
             return () =>{
                 document.removeEventListener('keydown', handleKeyPress);
             }
-    }, []);
+    });
     const handleKeyPress = (e) =>{
         if(e.keyCode === clip.keyCode){
             playit();
         }
     }
+    /* /===== this part is a bit hard to digest*/
 
     const playit = () =>{
         let audio = document.getElementById(clip.keyTrigger);
@@ -92,7 +101,6 @@ const Pad= ({clip})=>{
         audio.currentTime = 0;
         audio.play();
     };
-
     return(
         <div onClick = {playit} className={`btn btn-warning p-4 m-2 ${active && "btn-danger"}`}>
             <audio className="clip" id={clip.keyTrigger} src={clip.url || clip.src} />
