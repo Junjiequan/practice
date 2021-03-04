@@ -1,0 +1,11 @@
+.container-height{
+    min-height: 450px;
+    padding-bottom:40px;
+}
+
+.bg{
+    background-color: rgb(37, 37, 37);
+}
+.black{
+    background-color: black;
+}
