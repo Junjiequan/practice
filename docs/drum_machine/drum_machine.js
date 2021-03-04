@@ -149,7 +149,7 @@ const Pad= ({clip,volume,setRecord})=>{
         setRecord((prev) => prev + " " +clip.keyTrigger);
     };
     return(
-        <div onClick = {playit} className={`btn btn-warning p-4 m-2 ${active && "btn-light"}`}>
+        <div onClick = {playit} className={`btn btn-warning p-3 m-2 ${active && "btn-light"}`}>
             <audio className="clip" id={clip.keyTrigger} src={clip.url || clip.src} />
             {clip.keyName}
         </div>
