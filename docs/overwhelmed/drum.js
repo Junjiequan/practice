@@ -64,33 +64,3 @@ const audioClips = [
     }
   ];
 
-const App = () =>{
-
-  return (
-    <div className="bg-secondary min-vh-100">
-        <div className="text-center">
-          <h2>music player</h2>
-          {audioClips.map(elem=> {
-            return <Musicplayer key={elem.id} elem={elem}/>
-          })}
-        </div>
-    </div>
-  )
-}
-
-const Musicplayer = ({elem}) =>{
-  
-  const playit = () =>{
-    const audio = document.getElementById(elem.keyTrigger);
-    audio.currentTime = 0;
-    audio.play();
-  }
-
-  return (
-    <div onClick={playit} className="btn btn-danger p-3 m-3">
-        <audio  id={elem.keyTrigger} src={elem.url} />
-        {elem.keyTrigger}
-    </div>
-  )
-}
-ReactDOM.render(<App/>, document.getElementById('app'))
