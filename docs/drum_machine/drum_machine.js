@@ -155,4 +155,4 @@ const Pad= ({clip,volume,setRecord})=>{
         </div>
     );
 }
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.body);
