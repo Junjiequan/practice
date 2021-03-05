@@ -63,4 +63,44 @@ const audioClips = [
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3'
     }
   ];
+  const App = () =>{
+    return (
+      <>
+        <div className="bg-dark min-vh-100 text-center ">
+          <h2 className="text-white">Check this out</h2>
+          {audioClips.map((index) => {
+            return <Musicplayer key={index.id} index={index} />
+          })}
+        </div>
+      </>
+    )
+  }
 
+  const Musicplayer = ({index})=> {
+    const [active,setActive] = React.useState(false);
+
+      React.useEffect(()=>{
+        document.addEventListener('keydown', handleKeypress)
+          return () => {
+            document.removeEventListener('keydown', handleKeypress)
+      }})
+      const handleKeypress = (e) =>{
+        if (e.keyCode === index.keyCode){
+          playAudio();
+        }
+      }
+    const playAudio = () =>{
+      const audio = document.getElementById(index.keyTrigger);
+      setActive(true);
+      setTimeout(() =>  setActive(false), 300);
+      audio.currentTime = 0;
+      audio.play();
+    }
+    return (
+        <div onClick = {playAudio} className="btn btn-warning p-3 m-2 ">
+          <audio id={index.keyTrigger} src={index.url} />
+          {index.keyTrigger}
+        </div>
+    )
+  }
+ReactDOM.render(<App/>, document.getElementById('app'))
