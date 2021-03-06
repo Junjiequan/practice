@@ -99,7 +99,6 @@ const App = () =>{
               value={volume} onChange={e=> setVolume(e.target.value)} type="range" 
               />
               <h6>{record}</h6>
-             
                 <>
                 <button onClick={playRecord} className="btn btn-dark m-2 ">Play</button>
                 <button onClick={()=> setRecord("Recording:")}className="btn btn-secondary m-2 ">Clear</button>
