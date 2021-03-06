@@ -64,19 +64,48 @@ const audioClips = [
     }
   ];
   const App = () =>{
+    const [volume,setVolume] = React.useState(0.7);
+    const [record, setRecord] = React.useState("");
+    const [speed,setSpeed] = React.useState(0.7);
+      const playRecord = () =>{
+        let index = 0;
+        let recordShit = record.split(" ");
+        const interval = setInterval(()=>{
+          const audio = document.getElementById(recordShit[index])
+          console.log(audio)
+          audio.volume = volume;
+          audio.currentTime = 0;
+          audio.play();
+          index++;
+        }, 650 * speed);
+      setTimeout(()=>clearInterval(interval), 650 * speed * recordShit.length -1 );
+    }
+    const handleVolume = (e) => setVolume(e.target.value);
+    const handleSpeed = (e) => setSpeed(e.target.value);
     return (
       <>
-        <div className="bg-dark min-vh-100 text-center ">
-          <h2 className="text-white">Check this out</h2>
+        <div className="bg-dark min-vh-100 text-center text-white">
+          <h2 >Check this out</h2>
           {audioClips.map((index) => {
-            return <Musicplayer key={index.id} index={index} />
+            return <Musicplayer key={index.id} index={index} volume={volume} setRecord={setRecord}/>
           })}
+          <h3>Volume</h3>
+          <input type="range" onChange={handleVolume} step="0.01" value={volume} max="1" min="0.1" className="w-50"/>
+          <h4>{record}</h4>
+          {record && (
+            <>
+            <button onClick={playRecord} className="btn btn-light m-2">PLAY</button>
+            <button onClick={()=> setRecord("")}className="btn btn-danger m-2">CLOSE</button>
+            </>
+          )}
+          <h3>speed</h3>
+          <input type="range" onChange={handleSpeed} step="0.01" value={speed} max="1" min="0.1" className="w-50" />
         </div>
       </>
     )
   }
 
-  const Musicplayer = ({index})=> {
+  const Musicplayer = ({index,volume,setRecord})=> {
     const [active,setActive] = React.useState(false);
 
       React.useEffect(()=>{
@@ -90,11 +119,13 @@ const audioClips = [
         }
       }
     const playAudio = () =>{
-      const audio = document.getElementById(index.keyTrigger);
+      let audio = document.getElementById(index.keyTrigger);
       setActive(true);
       setTimeout(() =>  setActive(false), 300);
+      audio.volume = volume;
       audio.currentTime = 0;
       audio.play();
+      setRecord((prev)=> prev  + index.keyTrigger + " ")
     }
     return (
         <div onClick = {playAudio} className="btn btn-warning p-3 m-2 ">
