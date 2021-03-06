@@ -66,7 +66,7 @@ const audioClips = [
 
 const App = () =>{
     const [volume, setVolume] = React.useState(0.7);
-    const [record, setRecord] = React.useState("录制:");
+    const [record, setRecord] = React.useState("Recording:");
     const [speed, setSpeed] = React.useState(0.5);
     const playRecord = () =>{
       let index = 0;
@@ -79,12 +79,11 @@ const App = () =>{
           index++;
       } , speed * 800);
       setTimeout(() => clearInterval(interval), 800 * speed * recordArray.length - 1)
-      
     };
     return (
       <>
-    <div className="min-vh-100 text-white d-flex align-items-center justify-content-center">
-        <div className="text-center col-7 bg-danger rounded-2 container-height">
+    <div className=" min-vh-100 text-white text-center d-flex align-items-center justify-content-center">
+        <div className="maxw text-center col-5 bg-danger rounded-2 container-height">
             <h2 className="black text-white pt-2 pb-2  rounded-top rounded-5 ">BEATS</h2>
              {audioClips.map((clip)=> (
              <Pad key={clip.id} clip={clip} volume={volume} setRecord={setRecord}/>  ))}
@@ -95,29 +94,24 @@ const App = () =>{
              // likewise, clip = {clip} calls the entire value of an array [0]  = {keyCode, keyTrigger, etc.,} 
              */}
               <br/>
-              <h4>音量控制</h4>
+              <h4>Volume</h4>
               <input step="0.01" max="1" min="0" className="w-75" title={volume} 
               value={volume} onChange={e=> setVolume(e.target.value)} type="range" 
               />
-              <h3>{record}</h3>
+              <h6>{record}</h6>
              
                 <>
-                <button onClick={playRecord} className="btn btn-dark m-2 ">播放</button>
-                <button onClick={()=> setRecord("录制:")}className="btn btn-secondary m-2 ">清除</button>
+                <button onClick={playRecord} className="btn btn-dark m-2 ">Play</button>
+                <button onClick={()=> setRecord("Recording:")}className="btn btn-secondary m-2 ">Clear</button>
                 <br/>
-              <h3>播放速度调节器<span className="h6">(往左加速)</span></h3>
+              <h4>Speed controller<span className="h6">(+ -)</span></h4>
                 <input step="0.01" max="1.5" min="0.1" className="w-75" title={speed} 
               value={speed} onChange={e=> setSpeed(e.target.value)} type="range" 
               />
                 </>
-              
-
-              
-
         </div>
     </div> 
     </> )
-   
 }
 const Pad= ({clip,volume,setRecord})=>{
 
@@ -151,7 +145,7 @@ const Pad= ({clip,volume,setRecord})=>{
     return(
         <div onClick = {playit} className={`btn btn-warning p-3 m-2 ${active && "btn-light"}`}>
             <audio className="clip" id={clip.keyTrigger} src={clip.url || clip.src} />
-            {clip.keyName}
+            {clip.keyTrigger}
         </div>
     );
 }
