@@ -49,7 +49,6 @@ const App = ()=>{
         }
     }
     return (
-        <>
         <div className="container">
             <div className="back-color text-white grid-container">
                 <div  className="button output">
@@ -77,7 +76,6 @@ const App = ()=>{
                 <div onClick={calculate} className="button equal">=</div>
             </div>
         </div>
-        </>
     )
 }
 ReactDOM.render(<App/>, document.getElementById('app'))
