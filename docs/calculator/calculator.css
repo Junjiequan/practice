@@ -7,7 +7,7 @@
     margin:0; padding:0; box-sizing:border-box;
 }
 body{
-    background-color: rgba(88, 88, 88, 0.267)
+    background-color: rgb(173, 173, 173)
 }
 .container{
     min-height:100vh;
@@ -19,8 +19,9 @@ body{
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
+            "title title title title"
             "input input input input"
             "AC C slash times"
             "seven eight nine minus"
@@ -52,8 +53,19 @@ body{
     grid-area:equal;
     display:flex;
     align-items:center;
+    justify-content:center;
     background-color:rgb(70, 69, 117);
-
+}
+.title{
+    color: rgb(173, 173, 173);
+    grid-area:title;
+    padding:4px 0;
+    outline:1px;
+    background-color: rgb(173, 173, 173);
+    text-shadow: -3px -4px 7px rgb(0, 0, 0);
+}
+.title h3{
+    font-weight:1000;
 }
 .back-color {
     background-color: #111;
@@ -65,7 +77,6 @@ body{
     grid-area:input;
     text-align: right;
     padding: 5px 5px;
-    
     font-family: 'Orbitron', sans-serif;
     font-size:0.8em;
 
@@ -80,6 +91,8 @@ body{
     padding: 3px 0;
     opacity: 0.6;
     color:rgb(0, 0, 0);
+    font-size:14px;
+    font-weight:600;
 }
 .output-2{
     background-color: #111;

@@ -1,25 +1,27 @@
 const App = ()=>{
     
-    const number = /[0-9.]/g
-    const symbol = /[+-/*.]/
+    const number = /[\d+] [.]/ 
+    const symbol = /[+-/*]/
+    const symbol2 = /[+/*]/
     const [output,setOutput] = React.useState("");
     const [result,setResult] = React.useState(0);
-    
+
     const input = (symbols)=>{
-        
+        setOutput((prev) => prev + symbols);
         if (output[output.length-1] === '='){
             if (number.test(symbols)){
                 setOutput(symbols)
             } else setOutput(result + symbols.slice(0,symbols.length-1))
         }
-        if ((output[0]) == "计"){
-            null
-        }  else  setOutput((prev) => prev + symbols)
-        if(symbol.test(output[output.length-1]) && symbol.test(output[output.length-2])){
-           setOutput('计算器都用不好吗')
-           setResult('按AC重来')
-        }   
+        let Arrays = output.split('');
+        if(symbol.test(symbols)){
+            if(symbol.test(Arrays[Arrays.length-1])){
+                setOutput(()=> Arrays.slice(0,Arrays.length-1).join("") + Arrays[Arrays.length-1].replace(symbol, symbols))
+            }
+        if(symbol2.test(Arrays[0]) )
+        setOutput("Learn to use calculator")
     }
+}
     const calculate = () =>{
         setResult(eval(output))
         setOutput((prev)=> prev + "=")
@@ -49,7 +51,8 @@ const App = ()=>{
     }
     return (
         <div className="container">
-            <div className="back-color text-white grid-container">
+            <div className="back-color text-white grid-container ">
+                <div className="title text-center"><h3>Damaged Calculator</h3></div>
                 <div  className="button output">
                     <input className="output-1"type="text" value={output}  disabled/>
                     <br/>
