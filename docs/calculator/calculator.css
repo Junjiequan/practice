@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+*{
+    margin:0; padding:0; box-sizing:border-box;
+}
+body{
+    background-color: rgba(88, 88, 88, 0.267)
+}
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+            "input input input input"
+            "AC AC slash times"
+            "seven eight nine minus"
+            "four five six plus"
+            "one two three equal"
+            "zero zero dot equal"
+            ;
+}
+.button{
+    outline: 1px solid rgb(3, 3, 3);
+    padding:20px 30px;
+    font-weight:bold;
+    font-size:1.2em;
+    cursor:pointer;
+}
+.symbol-color{
+    background-color:rgb(105, 105, 105)
+}
+.number-color{
+    background-color: rgb(71, 71, 71)
+}
+.zero{
+    grid-area:zero;
+}
+.equal{
+    grid-area:equal;
+    background-color:rgb(97, 7, 62);
+
+}
+.input{
+    grid-area:input;
+    text-align: right;
+    padding-right:5px;
+    font-family: 'Orbitron', sans-serif;
+}
+.AC{
+    grid-area:AC;
+    background-color: rgb(112, 87, 5)
+}
