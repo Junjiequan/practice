@@ -18,7 +18,7 @@ body{
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
             "input input input input"
-            "AC AC slash times"
+            "AC C slash times"
             "seven eight nine minus"
             "four five six plus"
             "one two three equal"
@@ -32,6 +32,9 @@ body{
     font-size:1.2em;
     cursor:pointer;
 }
+.button:hover{
+    opacity:0.5;
+}
 .symbol-color{
     background-color:rgb(105, 105, 105)
 }
@@ -43,7 +46,9 @@ body{
 }
 .equal{
     grid-area:equal;
-    background-color:rgb(97, 7, 62);
+    display:flex;
+    align-items:center;
+    background-color:rgb(70, 69, 117);
 
 }
 .output{
@@ -54,7 +59,12 @@ body{
     font-family: 'Orbitron', sans-serif;
     font-size:0.8em;
 }
+.output input{
+    text-align:right;
+}
 .AC{
-    grid-area:AC;
-    background-color: rgb(112, 87, 5)
+    background-color: rgb(80, 28, 28)
+}
+.C{
+    background-color: rgb(49, 39, 9) 
 }
