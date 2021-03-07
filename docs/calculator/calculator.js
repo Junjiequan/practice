@@ -18,7 +18,7 @@ const App = ()=>{
         if(symbol.test(output[output.length-1]) && symbol.test(output[output.length-2])){
            setOutput('计算器都用不好吗')
            setResult('按AC重来')
-            }   
+        }   
     }
     const calculate = () =>{
         setResult(eval(output))
@@ -33,7 +33,6 @@ const App = ()=>{
         setResult(0);
         setOutput("");
     }
-
     React.useEffect(()=>{
         document.addEventListener("keydown", handleKeydown)
         return ()=>{
