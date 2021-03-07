@@ -46,11 +46,13 @@ body{
     background-color:rgb(97, 7, 62);
 
 }
-.input{
+.output{
     grid-area:input;
     text-align: right;
     padding-right:5px;
+    padding-top:3px;
     font-family: 'Orbitron', sans-serif;
+    font-size:0.8em;
 }
 .AC{
     grid-area:AC;
