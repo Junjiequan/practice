@@ -4,18 +4,20 @@ const App = ()=>{
     const symbol = /[+-/*.]/
     const [output,setOutput] = React.useState("");
     const [result,setResult] = React.useState(0);
-
+    
     const input = (symbols)=>{
-        setOutput((prev) => prev + symbols);
+        
         if (output[output.length-1] === '='){
             if (number.test(symbols)){
                 setOutput(symbols)
-            } else setOutput(result + symbols)
+            } else setOutput(result + symbols.slice(0,symbols.length-1))
         }
-
+        if ((output[0]) == "计"){
+            null
+        }  else  setOutput((prev) => prev + symbols)
         if(symbol.test(output[output.length-1]) && symbol.test(output[output.length-2])){
            setOutput('计算器都用不好吗')
-           console.log(setResult('按AC重来'))
+           setResult('按AC重来')
             }   
     }
     const calculate = () =>{
@@ -31,14 +33,29 @@ const App = ()=>{
         setResult(0);
         setOutput("");
     }
+
+    React.useEffect(()=>{
+        document.addEventListener("keydown", handleKeydown)
+        return ()=>{
+            document.removeEventListener("keydown", handleKeydown)
+        }
+    })
+    const handleKeydown = (e) =>{
+        if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) 
+        || e.keyCode == 107 || e.keyCode == 109 || e.keyCode == 106 || e.keyCode == 111){
+            setOutput((prev) => prev + e.key);
+        } else if ((e.keyCode == 13)){
+            setResult (eval(output));
+        }
+    }
     return (
         <>
         <div className="container">
-            <div className="bg-dark text-white grid-container">
+            <div className="back-color text-white grid-container">
                 <div  className="button output">
-                    <input type="text" value={output} placeholder="0" disabled/>
+                    <input className="output-1"type="text" value={output}  disabled/>
                     <br/>
-                    <input type="text" value={result}  disabled placeholder="1"/>
+                    <input className="output-2"type="text" value={result} placeholder="0" disabled />
                 </div>
                 <div onClick={clearAll} className="button AC">AC</div>
                 <div onClick={clear} className="button C">C</div>
