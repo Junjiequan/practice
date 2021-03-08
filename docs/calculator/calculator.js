@@ -1,31 +1,33 @@
 const App = ()=>{
-    
-    const number = /[\d+] [.]/ 
-    const symbol = /[+-/*]/
-    const symbol2 = /[+/*]/
-    const [output,setOutput] = React.useState("");
+    const number = /[0-9]/g
+    const symbols = /[/+*=]/
+    const dot = /[.-]/
+    const [output, setOutput]= React.useState("");
     const [result,setResult] = React.useState(0);
-
-    const input = (symbols)=>{
-        setOutput((prev) => prev + symbols);
-        if (output[output.length-1] === '='){
-            if (number.test(symbols)){
-                setOutput(symbols)
-            } else setOutput(result + symbols.slice(0,symbols.length-1))
-        }
-        let Arrays = output.split('');
-        if(symbol.test(symbols)){
-            if(symbol.test(Arrays[Arrays.length-1])){
-                setOutput(()=> Arrays.slice(0,Arrays.length-1).join("") + Arrays[Arrays.length-1].replace(symbol, symbols))
+    const input = (element) =>{
+        setOutput((prev) => prev + element);
+         let checkArr = output.split("");
+            if (symbols.test(element)){
+                if(symbols.test(checkArr[checkArr.length-1])){
+                    checkArr[checkArr.length-1] = element;
+                    setOutput(checkArr.join(""))
+                }
+             }
+             if(dot.test(checkArr[checkArr.length-1])){
+                 if(!number.test(element)){
+                    let element = '';
+                    setOutput(checkArr.slice(0,checkArr.length-1).join(''))
+                 }
+             }
+             if(dot.test(element)){
+                if (dot.test(checkArr[checkArr.length-2])){
+                    alert("There's no such a number")
+                    setOutput('')
+                }
             }
-        if(symbol2.test(Arrays[0]) )
-        setOutput("Learn to use calculator")
     }
-}
-    const calculate = () =>{
+    const calculator = () =>{
         setResult(eval(output))
-        setOutput((prev)=> prev + "=")
-
     }
     const clear = ()=>{
         setOutput((prev)=> prev.split("").slice(0,prev.length-1).join(""));
@@ -75,7 +77,7 @@ const App = ()=>{
                 <div onClick={()=> input("3")} className="button number-color three">3</div>
                 <div onClick={()=> input("0")} className="button number-color zero">0</div>
                 <div onClick={()=> input(".")} className="button number-color dot">.</div>
-                <div onClick={calculate} className="button equal">=</div>
+                <div onClick={calculator} className="button equal">=</div>
             </div>
         </div>
     )
