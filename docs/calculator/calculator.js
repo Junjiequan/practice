@@ -1,7 +1,8 @@
 const App = ()=>{
-    const number = /[0-9]/g
-    const symbols = /[/+*=]/
-    const dot = /[.-]/
+    const number = /[0-9]/g;
+    const symbols = /[/+*=]/;
+    const dot = /[.-]/;
+    const dotOnly = /[.]/;
     const [output, setOutput]= React.useState("");
     const [result,setResult] = React.useState(0);
     const input = (element) =>{
@@ -19,8 +20,8 @@ const App = ()=>{
                     setOutput(checkArr.slice(0,checkArr.length-1).join(''))
                  }
              }
-             if(dot.test(element)){
-                if (dot.test(checkArr[checkArr.length-2])){
+             if(dotOnly.test(element)){
+                if (dotOnly.test(checkArr[checkArr.length-2])){
                     alert("There's no such a number")
                     setOutput('')
                 }
