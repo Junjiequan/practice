@@ -22,7 +22,7 @@ const App = ()=>{
              }
              if(dotOnly.test(element)){
                 if (dotOnly.test(checkArr[checkArr.length-2])){
-                    alert("There's no such a number")
+                    alert("你见过0.0.6的数字吗")
                     setOutput('')
                 }
             }
