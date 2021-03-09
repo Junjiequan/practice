@@ -1,7 +1,36 @@
 *{padding:0; margin:0; box-sizing:border-box;}
-.container{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+body{
+    background-color:rgb(219, 216, 200)
+}
+
+
+.session-time{
+    min-width:300px;
+    min-height:220px;
+    border-radius: 10px;
+}
+
+  .btn:focus,
+  .btn:active{
+    box-shadow: none !important;
+  }
+
+.font{
+    font-size:20px;
+    font-family:sans-serif;
+    font-weight:bold;
+}
+.time-box{
+    background-color:rgb(255, 232, 170);
+    min-height:460px;
+    border-radius:10px;
+}
+h3{
+    color:rgb(102, 67, 67);
+    text-shadow: 4px 2px 1px rgb(133, 133, 133);
+    font-family: 'Fascinate', cursive;
+    font-family: 'Press Start 2P', cursive;
+}
+.click{
+    width:60px;
 }
