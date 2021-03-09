@@ -1,3 +1,4 @@
+
 const App = () =>{
     const [sessiontime, setSessiontime] = React.useState(25*60);
     const [breaklength, setBreaklength] = React.useState(5*60);
@@ -6,7 +7,7 @@ const App = () =>{
     const [pause, setPause] = React.useState(false);
     const [audio, setAudio] = React.useState(new Audio("./audio.wav"));
     const [color,setColor] = React.useState({color:'white'});
-    console.log(addtime)
+
     const playAudio = ()=>{
         audio.currentTime = 0;
         audio.play();
@@ -26,7 +27,6 @@ const App = () =>{
     const startTime = () =>{
         setAddtime(!addtime)
         // too hard 
-        let second = 1000;
         let date = new Date().getTime();
         let nextDate = new Date().getTime()
         let stop = pause;
