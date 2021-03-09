@@ -6,7 +6,7 @@ const App = () =>{
     const [pause, setPause] = React.useState(false);
     const [audio, setAudio] = React.useState(new Audio("./audio.wav"));
     const [color,setColor] = React.useState({color:'white'});
-
+    console.log(addtime)
     const playAudio = ()=>{
         audio.currentTime = 0;
         audio.play();
@@ -24,10 +24,11 @@ const App = () =>{
         )
     };
     const startTime = () =>{
+        setAddtime(!addtime)
         // too hard 
         let second = 1000;
         let date = new Date().getTime();
-        let nextDate = new Date().getTime() + second;
+        let nextDate = new Date().getTime()
         let stop = pause;
         if (!addtime) {
             let interval = setInterval(()=>{
@@ -38,12 +39,12 @@ const App = () =>{
                             playAudio();
                             stop = true;
                             setPause(true);
-                            return breaklength
+                            return breaklength;
                         } else if (prev <=0 && stop){
                             playAudio();
                             stop = false;
                             setPause(false);
-                            return sessionlength
+                            return sessionlength;
                         } else if (prev <=60 ){
                             setColor({color:'red'})
                         } else if (prev > 60 ){
@@ -51,19 +52,19 @@ const App = () =>{
                         }   
                     return prev - 1;
                     });
-                    nextDate += second;
-
                 }
-            }, 30);
+            }, 1000);
             localStorage.clear();
             localStorage.setItem("interval-id", interval);
+
         }
         if(addtime){
             clearInterval(localStorage.getItem("interval-id"));
         }
-        setAddtime(!addtime)
         //too hard
+        
     }
+   
     const changeBreak = (amount) =>{
         if( breaklength <= 60 && amount < 0 ) {
             return
