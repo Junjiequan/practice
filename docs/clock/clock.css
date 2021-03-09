@@ -9,12 +9,10 @@ body{
     min-height:220px;
     border-radius: 10px;
 }
-
   .btn:focus,
   .btn:active{
     box-shadow: none !important;
-  }
-
+}
 .font{
     font-size:20px;
     font-family:sans-serif;
