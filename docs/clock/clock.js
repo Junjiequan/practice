@@ -1,7 +1,7 @@
 const App = () =>{
-    const [sessiontime, setSessiontime] = React.useState(25*60);
-    const [breaklength, setBreaklength] = React.useState(5*60);
-    const [sessionlength, setSessionlength] = React.useState(25*60);
+    const [sessiontime, setSessiontime] = React.useState(1);
+    const [breaklength, setBreaklength] = React.useState(3);
+    const [sessionlength, setSessionlength] = React.useState(5);
     const [addtime, setAddtime] = React.useState(false);
     const [pause, setPause] = React.useState(false);
     const [audio, setAudio] = React.useState(new Audio("./audio.wav"));
@@ -56,15 +56,12 @@ const App = () =>{
             }, 1000);
             localStorage.clear();
             localStorage.setItem("interval-id", interval);
-
         }
         if(addtime){
             clearInterval(localStorage.getItem("interval-id"));
         }
         //too hard
-        
     }
-   
     const changeBreak = (amount) =>{
         if( breaklength <= 60 && amount < 0 ) {
             return
