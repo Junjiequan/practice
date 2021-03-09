@@ -1,4 +1,4 @@
-**Some projrects I have done:**
+**Some projects I have done:**
 
 >[quote machine](https://a331998513.github.io/practice/quote_machine/)
 
