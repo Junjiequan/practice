@@ -1,7 +1,7 @@
 const App = () =>{
-    const [sessiontime, setSessiontime] = React.useState(1);
-    const [breaklength, setBreaklength] = React.useState(3);
-    const [sessionlength, setSessionlength] = React.useState(5);
+    const [sessiontime, setSessiontime] = React.useState(25*60);
+    const [breaklength, setBreaklength] = React.useState(5*60);
+    const [sessionlength, setSessionlength] = React.useState(25*60);
     const [addtime, setAddtime] = React.useState(false);
     const [pause, setPause] = React.useState(false);
     const [audio, setAudio] = React.useState(new Audio("./audio.wav"));
@@ -118,22 +118,22 @@ const App = () =>{
         </div>
     )
 }
-const Left = ({title, changeTime,time,runTime})=>{
+const Left = ({title, changeTime,time})=>{
     return (
             <div className="m-4 text-center">
                 <h4>{title}</h4>
                 <button onClick={()=> changeTime(-60, time )} className="btn btn-dark p-1 m-1"><i className="fa fa-arrow-down" aria-hidden="true"></i></button>
-                <span className="p-2 font">{runTime(time)}</span>
+                <span className="p-2 font">{(time)/60}</span>
                 <button onClick={()=> changeTime(+60, time)} className="btn btn-dark p-1 m-1"><i className="fa fa-arrow-up" aria-hidden="true"></i></button>
             </div>
     )
 }
-const Right = ({title, changeTime,time,runTime})=>{
+const Right = ({title, changeTime,time})=>{
     return (
             <div className="m-4 text-center">
                 <h4>{title}</h4>
                 <button onClick={()=> changeTime(-60, time )} className="btn btn-dark p-1"><i className="fa fa-arrow-down" aria-hidden="true"></i></button>
-                <span className="p-2 font">{runTime(time)}</span>
+                <span className="p-2 font">{(time)/60}</span>
                 <button onClick={()=> changeTime(+60, time)} className="btn btn-dark p-1"><i className="fa fa-arrow-up" aria-hidden="true"></i></button>
             </div>
     )
