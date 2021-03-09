@@ -55,7 +55,6 @@ const App = () =>{
 
                 }
             }, 30);
-            console.log(interval)
             localStorage.clear();
             localStorage.setItem("interval-id", interval);
         }
