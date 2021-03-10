@@ -3,6 +3,9 @@
     margin:0;
     box-sizing:border-box;
 }
+.container{
+    display:flex;
+}
 .grid{
     background-color:rgb(177, 177, 177);
     width: 200px;
@@ -17,4 +20,22 @@
 }
 .tetromino{
     background-color:rgb(83, 11, 58);
+}
+.mini-tetromino{
+    background-color:rgb(153, 134, 28)
+}
+
+.show-tetromino{
+    margin-left:30px;
+    border:1px solid black;
+    width:  100px;
+    height: 80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.show-tetromino div{
+    width:20px;
+    height:20px;
 }

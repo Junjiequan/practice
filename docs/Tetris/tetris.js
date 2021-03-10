@@ -48,6 +48,7 @@ let currentRotation = 0;
 //random tetromino's shape selection
 let random = Math.floor(Math.random() * theTetrominos.length);
 let current = theTetrominos[random][currentRotation];
+let miniRandom = 0
 
 //add the teromino
 const draw = () =>{
@@ -92,11 +93,14 @@ const stop = () =>{
     // if the tetromino touches buttom change div class to taken
     if(current.some(index=> square[currentPosition + index + width].classList.contains('taken'))){
         current.forEach(index => square[currentPosition + index].classList.add('taken'));
+        
         //new tetromino starts to drop
         random = Math.floor(Math.random() * theTetrominos.length);
+        miniRandom = random;
         current = theTetrominos[random][currentRotation];
         currentPosition = 4;
         draw();
+        displayMiniTetromino()
     }
 }
 
@@ -131,28 +135,57 @@ const rotate = () =>{
     checkRotatedPosition();
     draw();
 }
-//rotationCheck      //this part is a little bit confusing, but I did comprehend. good job. 
+//rotationCheck      //this part is a little bit confusing, but I did comprehend it. good job. 
 const checkLeft = () =>{   // check if rotation transfered the tetromino to previous line  e.g.,   20  => 19 
      return current.some(index=> (currentPosition + index + 1) % width === 0)
 }
 const checkRight = () =>{   // check if rotation transfered the tetromino to next line  e.g.,   19 => 20 
      return current.some(index=> (currentPosition + index) % width === 0)
 }
-
 const checkRotatedPosition = (position)=>{
     position = position || currentPosition  
-    if((position + 1) % width < 4){
+    if((position + 1) % width < 4){ //check if currentTetromino located in right side
         if(checkLeft()){
-            currentPosition += 1   
+            currentPosition += 1   //push back to right
             checkRotatedPosition(position)
         }
     }
-    else if (position % width > 5){
+// [10,11,12,13,14,15,16,17,18,19]
+// [20,21,22,23,24,25,26,27,28,29]
+// when position = 26, 26 % 10 = 6, 6 > 5, so currenTetromino on the right side
+    else if (position % width > 5){     //check if currentTetromino located in left side
         if(checkRight()){
-            currentPosition -= 1  
+            currentPosition -= 1  //push back to left
             checkRotatedPosition(position)
         }
     }
+}
+
+//----------------some additional features----------------
+//display mini tetromino in the show-tetromino box
+const displaySquare = document.querySelectorAll('.show-tetromino div');
+const  miniWidth= 4
+let displayIndex = 1
+
+// mini-Tetrominos
+const nextTetrominos = [
+    [1, miniWidth+1, miniWidth*2+1, 2],                 //L
+    [0, miniWidth, miniWidth+1, miniWidth*2+1],         //Z
+    [1, miniWidth, miniWidth+1, miniWidth+2],           //T
+    [0, 1, miniWidth, miniWidth+1],                     //O
+    [1, miniWidth+1, miniWidth*2+1, miniWidth*3+1]      //I
+]
+
+// display mini version
+const displayMiniTetromino = () =>{
+
+    displaySquare.forEach(index=>{
+        index.classList.remove('mini-tetromino')
+    })
+    nextTetrominos[miniRandom].forEach(index=>{
+        displaySquare[displayIndex + index].classList.add('mini-tetromino')
+    })
+
 }
 
 
