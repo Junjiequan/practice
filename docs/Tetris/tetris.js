@@ -101,7 +101,6 @@ const stop = () =>{
         currentPosition = 4;
         draw();
         displayMiniTetromino()
-        
     } 
 }
 
