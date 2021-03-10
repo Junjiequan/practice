@@ -48,7 +48,7 @@ let currentRotation = 0;
 //random tetromino's shape selection
 let random = Math.floor(Math.random() * theTetrominos.length);
 let current = theTetrominos[random][currentRotation];
-let miniRandom = 0
+let afterRandom = 0
 
 //add the teromino
 const draw = () =>{
@@ -95,14 +95,14 @@ const stop = () =>{
         current.forEach(index => square[currentPosition + index].classList.add('taken'));
         
         //new tetromino starts to drop
-        random = Math.floor(Math.random() * theTetrominos.length);
-        miniRandom = random;
+        random = afterRandom;
+        afterRandom = Math.floor(Math.random() * theTetrominos.length);
         current = theTetrominos[random][currentRotation];
         currentPosition = 4;
         draw();
         displayMiniTetromino()
-        addScore() 
-    }
+        
+    } 
 }
 
 // key control //left
@@ -182,7 +182,7 @@ const displayMiniTetromino = () =>{
     displaySquare.forEach(index=>{
         index.classList.remove('mini-tetromino')
     })
-    nextTetrominos[miniRandom].forEach(index=>{
+    nextTetrominos[random].forEach(index=>{
         displaySquare[displayIndex + index].classList.add('mini-tetromino')
     })
 
