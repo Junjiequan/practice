@@ -44,6 +44,7 @@ const theTetrominos = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromin
 let currentPosition = 4;
 let currentRotation = 0;
 
+
 //random tetromino's shape selection
 let random = Math.floor(Math.random() * theTetrominos.length);
 let current = theTetrominos[random][currentRotation];
@@ -99,7 +100,7 @@ const stop = () =>{
     }
 }
 
-// key control
+// key control //left
 const moveLeft = () =>{
     undraw();
     const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0);
@@ -109,6 +110,7 @@ const moveLeft = () =>{
     }
     draw();
 }
+//right
 const moveRight = () =>{
     undraw();
     const isAtRightEdge = current.some(index => (currentPosition + index) % width === width-1);
@@ -118,6 +120,7 @@ const moveRight = () =>{
     }
     draw();
 }
+//rotate 
 const rotate = () =>{
     undraw();
     currentRotation++
@@ -125,9 +128,32 @@ const rotate = () =>{
         currentRotation = 0;
     };
     current = theTetrominos[random][currentRotation];
+    checkRotatedPosition();
     draw();
 }
+//rotationCheck      //this part is a little bit confusing, but I did comprehend. good job. 
+const checkLeft = () =>{   // check if rotation transfered the tetromino to previous line  e.g.,   20  => 19 
+     return current.some(index=> (currentPosition + index + 1) % width === 0)
+}
+const checkRight = () =>{   // check if rotation transfered the tetromino to next line  e.g.,   19 => 20 
+     return current.some(index=> (currentPosition + index) % width === 0)
+}
 
+const checkRotatedPosition = (position)=>{
+    position = position || currentPosition  
+    if((position + 1) % width < 4){
+        if(checkLeft()){
+            currentPosition += 1   
+            checkRotatedPosition(position)
+        }
+    }
+    else if (position % width > 5){
+        if(checkRight()){
+            currentPosition -= 1  
+            checkRotatedPosition(position)
+        }
+    }
+}
 
 
 
