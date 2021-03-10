@@ -15,12 +15,12 @@ body{
     margin: auto auto;
 }
 .container{
-
     display:flex;
     justify-content:center;
 }
 .container-top{
-    margin-right:120px;
+    display:block;
+    margin-left:30px;
     margin-bottom:20px;
 }
 .grid{
@@ -43,6 +43,10 @@ body{
     background-color:rgb(192, 28, 28);
 }
 
+.right-column{
+
+}
+
 .show-tetromino{
     margin-left:30px;
     width:  80px;
@@ -55,4 +59,19 @@ body{
     width:20px;
     height:20px;
     border:1px solid rgb(255, 255, 255);
+}
+
+.control-btn{
+    margin-top:170px;
+
+    width:140px;
+    height:20px;
+    text-align:center;
+}
+
+.control-btn .left{
+    padding-right:1.1rem;
+}
+.control-btn .right{
+    padding-left:1.1rem;
 }
