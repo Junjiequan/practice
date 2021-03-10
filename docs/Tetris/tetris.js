@@ -164,8 +164,8 @@ const checkRotatedPosition = (position)=>{
 //----------------some additional features----------------
 //display mini tetromino in the show-tetromino box
 const displaySquare = document.querySelectorAll('.show-tetromino div');
-const  miniWidth= 4
-let displayIndex = 1
+const  miniWidth= 4;
+let displayIndex = 1;
 
 // mini-Tetrominos
 const nextTetrominos = [
@@ -178,7 +178,6 @@ const nextTetrominos = [
 
 // display mini version
 const displayMiniTetromino = () =>{
-
     displaySquare.forEach(index=>{
         index.classList.remove('mini-tetromino')
     })

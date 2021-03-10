@@ -27,15 +27,15 @@
 
 .show-tetromino{
     margin-left:30px;
+    
     border:1px solid black;
     width:  100px;
-    height: 80px;
+    height: 82px;
     display:flex;
-    justify-content:center;
-    align-items:center;
     flex-wrap:wrap;
 }
 .show-tetromino div{
     width:20px;
     height:20px;
+    border:1px solid white;
 }
