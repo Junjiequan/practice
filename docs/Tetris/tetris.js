@@ -101,6 +101,7 @@ const stop = () =>{
         currentPosition = 4;
         draw();
         displayMiniTetromino()
+        addScore() 
     }
 }
 
@@ -187,7 +188,7 @@ const displayMiniTetromino = () =>{
 
 }
 
-
+// continue here
 
 
 
