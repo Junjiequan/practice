@@ -4,17 +4,17 @@
     box-sizing:border-box;
 }
 .grid{
-    background-color:burlywood;
+    background-color:rgb(177, 177, 177);
     width: 200px;
     height:400px;
     display:flex;
     flex-wrap: wrap;
 } 
 .grid div{
-    /* border:1px solid rgba(255, 255, 255, 0.8); */
+    border:1px solid rgba(255, 255, 255, 0.8);
     width:20px;
     height:20px;
 }
 .tetromino{
-    background-color:red;
+    background-color:rgb(83, 11, 58);
 }
