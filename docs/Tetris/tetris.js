@@ -181,7 +181,7 @@ const displayMiniTetromino = () =>{
     displaySquare.forEach(index=>{
         index.classList.remove('mini-tetromino')
     })
-    nextTetrominos[random].forEach(index=>{
+    nextTetrominos[afterRandom].forEach(index=>{
         displaySquare[displayIndex + index].classList.add('mini-tetromino')
     })
 
