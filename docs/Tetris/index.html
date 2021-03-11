@@ -13,11 +13,10 @@
 <body>
     <div class="entire-container">
     <div class="big-container">
-        <div class="container-top">
+        <div class="score-container">
             <h3>Score :<span id="score"> None</span></h3>
-            <button class="btn btn-secondary" id="start-btn">Start/Pause</button>
         </div>
-        <div class="container">
+        <div class="tetris-container">
             <div class="grid">
                 <div></div>
                 <div></div>
@@ -251,15 +250,22 @@
                         <div></div>
                     </div>
                 </div>
+                <div class="text-center">
+                    <button class="btn btn-dark shadow" id="start-btn">Start/Pause</button>
+                </div>
                 <div class="control-btn">
-                    <div>
-                    <i style="font-size: 2rem" class="bi bi-arrow-up-square-fill up" id="up"></i>
-                    <br/>
-                    <i style="font-size: 2rem" class="bi bi-arrow-left-square-fill left" id="left"></i>
-                    <i style="font-size: 2rem" class="bi bi-arrow-right-square-fill right" id="right"></i>
-                    <br/>
-                    <i style="font-size: 2rem" class="bi bi-arrow-down-square-fill down" id="down"></i>
-                 </div>
+                    <div class="case-btn">
+                        <div class="btn-up">
+                        <i class="bi bi-arrow-up-square-fill btn-shadow" id="up"></i>
+                        </div>
+                        <div class="btn-horizontal">
+                        <i class="bi bi-arrow-left-square-fill btn-shadow" id="left"></i>
+                        <i  class="bi bi-arrow-right-square-fill btn-shadow" id="right"></i>
+                        </div>
+                        <div class="btn-down">
+                        <i class="bi bi-arrow-down-square-fill btn-shadow" id="down"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

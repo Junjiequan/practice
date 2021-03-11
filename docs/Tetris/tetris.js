@@ -199,16 +199,8 @@ const displayMiniTetromino = () =>{
 
 
 // control buttons
-document.getElementById('left').addEventListener("click", function(){
-    moveLeft()
-})
-document.getElementById('down').addEventListener("click", function(){
-    drop()
-})
-document.getElementById('right').addEventListener("click", function(){
-    moveRight()
-})
-document.getElementById('up').addEventListener("click", function(){
-    rotate()
-})
+document.getElementById('left').addEventListener("click", moveLeft)
+document.getElementById('down').addEventListener("click", drop)
+document.getElementById('right').addEventListener("click", moveRight)
+document.getElementById('up').addEventListener("click", rotate)
 })
