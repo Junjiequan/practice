@@ -1,10 +1,13 @@
-**Some practice works:**
+*Full stack developer wanna be journey*
 
->[quote machine](https://a331998513.github.io/practice/quote_machine/) |
->[previewer](https://a331998513.github.io/practice/previewer/) |
->[drum machine](https://a331998513.github.io/practice/drum_machine/) |
->[calculator](https://a331998513.github.io/practice/calculator/) |
->[pomodoro clock](https://a331998513.github.io/practice/clock/)
+**Second month:**
+
+>[quote machine](https://a331998513.github.io/practice/quote_machine/)  |
+>[previewer](https://a331998513.github.io/practice/previewer/)  |
+>[drum machine](https://a331998513.github.io/practice/drum_machine/)  |
+>[calculator](https://a331998513.github.io/practice/calculator/)  |
+>[pomodoro clock](https://a331998513.github.io/practice/clock/) |
+>[Tetris](https://a331998513.github.io/practice/Tetris/)
 
 **Getting serious:**
->[Tetris](https://a331998513.github.io/practice/Tetris/)
+
