@@ -1,6 +1,6 @@
 *Full stack developer wanna be journey*
 
-**Second month:**
+**2nd month of the journey:**
 >[quote machine](https://a331998513.github.io/practice/quote_machine/)  |
 >[previewer](https://a331998513.github.io/practice/previewer/)  |
 >[drum machine](https://a331998513.github.io/practice/drum_machine/)  |
