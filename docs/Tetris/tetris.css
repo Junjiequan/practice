@@ -4,29 +4,35 @@
     box-sizing:border-box;
 }
 body{
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(0, 0, 0);
 }
 .entire-container{
-    
     display:flex;
     min-height:100vh;
     align-items:center;
+    background-color: rgb(214, 207, 192);
 }
 .big-container{
     margin: auto auto;
+    transform: scale(1.2);
+}
+@media only screen and (min-width:800px){
+    .big-container{
+        margin: auto auto;
+        transform: scale(1.7);
+    }
 }
 .score-container{
-    padding-bottom:10px;
+    padding-bottom:5px;
+    margin-left:1.5rem;
 }
 .tetris-container{
     display:flex;
     justify-content:center;
 }
-
 .grid{
     margin-right:5px;
-    background-color:rgba(206, 206, 206, 0.2);
-    outline:1px solid rgb(240, 240, 240);
+    background-color:rgba(57, 31, 59, 0.2);
     width: 200px;
     height:400px;
     display:flex;
@@ -35,35 +41,35 @@ body{
     border-radius:5px;
 } 
 .grid div{
-    border:1px solid rgba(255, 255, 255, 0.6);
+    border:1px solid rgba(255, 255, 255, 0.3);
     width:20px;
     height:20px;
+}
+.empty{
+    opacity:0
 }
 .tetromino{
     background-color:rgb(189, 159, 28);
     box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4) inset;
     border-radius:3px;
 }
-.mini-tetromino{
-    background-color:rgb(192, 28, 28);
-    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.4) inset;
-    border-radius:3px;
-}
 
 .right-column{
-    background-color:white;
     display:block;
-    border:1px solid rgb(165, 165, 165);
+    border:1px solid rgba(165, 165, 165, 0.4);
     width:140px;
     padding-top:10px;
-    margin-left:15px;
     border-radius:5px;
-    background-color:blanchedalmond
+    background-color:blanchedalmond;
 }
 .mini-container{
     display:flex;
     justify-content:center;
-
+}
+.mini-tetromino{
+    background-color:rgb(192, 28, 28);
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.4) inset;
+    border-radius:3px;
 }
 .show-tetromino{
     width:  80px;
