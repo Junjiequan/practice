@@ -238,6 +238,13 @@ const scorePlus = () => {
             square = squareDelete.concat(square)
              // this part is hard to understand // what is the purpose of appendChild here?-----------------
             square.forEach(index => grid.appendChild(index))
+            /////////////////////////////////
+            // so this part is basicly that with splice to cut off the "soul" of DIVs inside grid but remains body there.
+            // then we customize inside of the soul, thereafter we send each customized "soul" back to the grid with grid.appencChild
+            /////////////////////////////////
+            // in this case, since the splice and concat changed the array's  e.g. it would be look like this:
+            //[10,11,12,13,14,15,16,17,18,19,20,0,1,2,3,4,5,6,7,8,9]
+            //thus, we need to reorder the arrays by sending back all arrays back then resummon all of the arrays
         }
     }
 }
