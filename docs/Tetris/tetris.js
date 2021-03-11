@@ -45,10 +45,10 @@ const theTetrominos = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromin
 //tetromino's color
 const color = [
     'orange',
-    'red',
+    'DodgerBlue',
     'yellowgreen',
     'purple',
-    'blue'
+    'FireBrick'
 ]
 //starting position && rotation
 let currentPosition = 4;
