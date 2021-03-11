@@ -1,4 +1,4 @@
-*Full stack developer wanna be journey start date 22th January*
+*Full stack developer wanna be journey. Start date 22th January*
 
 **2nd month of the journey:**
 >[quote machine](https://a331998513.github.io/practice/quote_machine/)  |
