@@ -65,7 +65,7 @@ const playAudio = ()=>{
     audio.loop = true;
     audio.play();
 }
-// playmusic = setInterval(playAudio, 1000);
+playmusic = setInterval(playAudio, 1000);
 
 //add the teromino
 const draw = () =>{
