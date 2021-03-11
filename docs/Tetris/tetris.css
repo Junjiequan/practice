@@ -103,14 +103,13 @@ body{
     justify-content:center;
 }
 .btn-size .btn{
-    height:30px;
+    height:36px;
     width:84px;
     border-radius:3px;
     font-family: arial;
     color:var(--bs-light);
     opacity: 0.9;
     font-weight:600;
-  
     background-color:rgba(236, 220, 236, 0.05)
 }
 
