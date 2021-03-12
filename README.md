@@ -10,16 +10,13 @@ Free Code Camp projects:
   >[calculator (React.hooks)](https://a331998513.github.io/practice/calculator/)  |
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
 
+  
 
-  
-  
 **Fully functioning tetris**
 
-The very first personal project I have chosen
+The very first personal project I have chosen:
 
-  >[Tetris(JS)](https://a331998513.github.io/practice/Tetris/)
-
- *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
+  >[Tetris(JS)](https://a331998513.github.io/practice/Tetris/)  *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
 
 what have I done differently with the Tetris other than simply following the video? 
 - added some additional game features (sound effects, reset buttons, game fail effects etc.,)
