@@ -10,7 +10,8 @@
   
 **Fully functioning tetris**  
   >[Tetris(JS)](https://a331998513.github.io/practice/Tetris/)
- *[original tutorial link]*(https://www.youtube.com/watch?v=w1JJfK09ujQ&t=9s)
+
+ *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=9s)*
 
 what I have done differently?
 - added sound effects
