@@ -69,7 +69,7 @@ let afterRandom = 0;
 
 //play background music
 const playAudio = ()=>{
-    audio.volume = 0.5;
+    audio.volume = 0.4;
     audio.loop = true;
     audio.play();
 }
@@ -86,6 +86,7 @@ const clearAudio = () =>{
 const fallEffectAudio = () => {fallEffect.volume = 0.6; fallEffect.play()};
 const failEffectAudio = () => {failEffect.play()};
 const buttonAudio = () => { 
+    buttonAudio.volume = 1;
     buttonEffect.currentTime = 5.8;
     buttonEffect.play()
 };
@@ -284,7 +285,7 @@ const gameOver = () =>{
          }
         ) 
         if(parseInt(Scoredisplay.textContent) < 100){
-            
+
             Scoredisplay.textContent = 'NOOB'
             
         } else {
