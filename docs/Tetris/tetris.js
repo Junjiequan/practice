@@ -37,7 +37,14 @@ const grid = document.querySelector('.grid');
 let square = Array.from(document.querySelectorAll('.grid div'));
 const Scoredisplay = document.getElementById('score');
 const pauseBtn = document.getElementById('start-btn');
+//sound effects
 const audio = new Audio('./tetris.mp3');
+const clearEffect = new Audio('http://www.vertigogaming.org/downloads/svencoop/sound/sc_tetris/clear.wav');
+const fallEffect = new Audio('http://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/fall.wav')
+const failEffect = new Audio('http://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/gameover.wav')
+const buttonEffect = new Audio('./Okay.mp3');
+
+//set default
 let score = 0;
 let dropTimer;
 //tetromino
@@ -58,14 +65,30 @@ let currentRotation = 0;
 //random tetromino's shape selection
 let random = Math.floor(Math.random() * theTetrominos.length);
 let current = theTetrominos[random][currentRotation];
-let afterRandom = 0
+let afterRandom = 0;
 
 //play background music
 const playAudio = ()=>{
+    audio.volume = 0.5;
     audio.loop = true;
     audio.play();
 }
+
 playmusic = setInterval(playAudio, 1000);
+
+//sound effects here
+//clear
+const clearAudio = () =>{
+    clearEffect.currentTime = 0;
+    clearEffect.play();
+};
+//fall
+const fallEffectAudio = () => {fallEffect.play()};
+const failEffectAudio = () => {failEffect.play()};
+const buttonAudio = () => { 
+    buttonEffect.currentTime = 5.8;
+    buttonEffect.play()
+};
 
 //add the teromino
 const draw = () =>{
@@ -92,7 +115,6 @@ const drop = () =>{
         stop();
     } 
 }
-console.log(Scoredisplay.innerText)
 //Original drop interval here
 // dropTimer = setInterval(drop, 1000);
 
@@ -121,6 +143,7 @@ const stop = () =>{
     if(checktaken || checkempty){
         current.forEach(index => square[currentPosition + index].classList.add('taken'));
         currentPosition -= width;
+        fallEffectAudio();
         //new tetromino starts to drop
         random = afterRandom;
         afterRandom = Math.floor(Math.random() * theTetrominos.length);
@@ -229,6 +252,7 @@ const scorePlus = () => {
         if(row.every(index=> square[index].classList.contains('taken'))){
             score += 100;
             Scoredisplay.textContent = score;
+            clearAudio();
             row.forEach(index=>{
                 square[index].classList.remove('taken')
                 square[index].classList.remove('tetromino')
@@ -260,6 +284,7 @@ const gameOver = () =>{
          }
         )
         Scoredisplay.textContent = 'NOOB'
+        failEffectAudio();
         clearInterval(dropTimer);
     }
 }
@@ -292,9 +317,11 @@ const clickBtn = ()=>{
         clearInterval(dropTimer);
         dropTimer;
     }
-}
+    buttonAudio();
+} 
 // pause reset buttons
 document.getElementById('reset-btn') .addEventListener('click', gameClear);
+document.getElementById('reset-btn') .addEventListener('click', buttonAudio);
 document.getElementById('start-btn') .addEventListener('click', clickBtn);
 
 // control buttons
