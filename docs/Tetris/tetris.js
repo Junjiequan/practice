@@ -133,7 +133,7 @@ const control = (e) =>{
         }
     } 
 }
-document.addEventListener('keyup', control)
+document.addEventListener('keydown', control)
 
 
 // tetromino stops at the buttom
