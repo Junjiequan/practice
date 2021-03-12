@@ -2,6 +2,8 @@
 
 ***2nd month of the journey:***
 
+Free Code Camp projects:
+
   >[quote machine(React)](https://a331998513.github.io/practice/quote_machine/)  |
   >[previewer (JS)](https://a331998513.github.io/practice/previewer/)  |
   >[drum machine (React.hooks)](https://a331998513.github.io/practice/drum_machine/)  |
