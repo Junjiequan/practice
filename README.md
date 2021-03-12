@@ -11,7 +11,7 @@
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
 
 
-## The very first personal project I have chosen:  Tetris with pure javascript
+## The very first personal project I have chosen:     [Tetris](https://a331998513.github.io/practice/Tetris/) with pure javascript
 
 **main goal:** to feel comfortable with DOM, JS syntax and most importantly train my brain adapt to the language logic.
 
@@ -19,7 +19,7 @@
 
 **sources used help understanding:** stackOverflow, Google, Youtube, w3shools.
 
-  >[Tetris(JS)](https://a331998513.github.io/practice/Tetris/) -> *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
+*[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
 
 **what have I done differently with the Tetris other than simply following the video?**
 - added some additional game features (sound effects, reset buttons, game fail effects etc.,)
