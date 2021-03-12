@@ -17,7 +17,7 @@
  *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
 
 what have I done differently with the Tetris other than simply following the video? 
-- added some additional game features (sound effects, reset buttons, game finish score changes etc.,)
+- added some additional game features (sound effects, reset buttons, game fail effects etc.,)
 - playable on mobile
 - design (color, font choice, button etc.,)
 - fixed multiple serious bugs (there were too many bugs from the original tutorial. To name one, after paused game you can still force the brick to drop by press down arrow key)
