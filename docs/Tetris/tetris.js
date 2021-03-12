@@ -83,7 +83,7 @@ const clearAudio = () =>{
     clearEffect.play();
 };
 //fall
-const fallEffectAudio = () => {fallEffect.play()};
+const fallEffectAudio = () => {fallEffect.volume = 0.6; fallEffect.play()};
 const failEffectAudio = () => {failEffect.play()};
 const buttonAudio = () => { 
     buttonEffect.currentTime = 5.8;
@@ -108,7 +108,7 @@ const undraw = () =>{
 
 //tetromino drop action per second
 const drop = () =>{
-    if(pauseBtn.textContent === 'Pause' && Scoredisplay.textContent  !== 'NOOB'){
+    if(pauseBtn.textContent === 'Pause' && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend'){
         undraw();
         currentPosition += width ;
         draw();
@@ -157,7 +157,7 @@ const stop = () =>{
 }
 // key control //left
 const moveLeft = () =>{
-    if(pauseBtn.textContent === 'Pause'  && Scoredisplay.textContent  !== 'NOOB'){
+    if(pauseBtn.textContent === 'Pause'  && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend'){
         undraw();
         const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0);
         if(!isAtLeftEdge) currentPosition -=1 ;
@@ -169,7 +169,7 @@ const moveLeft = () =>{
 }
 //right
 const moveRight = () =>{
-    if(pauseBtn.textContent === 'Pause'  && Scoredisplay.textContent  !== 'NOOB'){
+    if(pauseBtn.textContent === 'Pause'  && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend'){
         undraw();
         const isAtRightEdge = current.some(index => (currentPosition + index) % width === width-1);
         if(!isAtRightEdge) currentPosition +=1 ;
@@ -181,7 +181,7 @@ const moveRight = () =>{
 }
 //rotate 
 const rotate = () =>{
-    if(pauseBtn.textContent === 'Pause' && Scoredisplay.textContent  !== 'NOOB' ){
+    if(pauseBtn.textContent === 'Pause' && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend' ){
         undraw();
         currentRotation++
         if(currentRotation == current.length) {
@@ -282,8 +282,15 @@ const gameOver = () =>{
                 index.classList.add('crashed')
             }
          }
-        )
-        Scoredisplay.textContent = 'NOOB'
+        ) 
+        if(parseInt(Scoredisplay.textContent) < 100){
+            
+            Scoredisplay.textContent = 'NOOB'
+            
+        } else {
+            document.querySelector('.score-container span').style.color = 'rgba(255, 193, 24, 0.7)'
+            Scoredisplay.textContent = 'Legend'
+        }
         failEffectAudio();
         clearInterval(dropTimer);
     }
@@ -302,6 +309,7 @@ const gameClear = ()=>{
     clearInterval(dropTimer);
     dropTimer = setInterval(drop,300);
     displayMiniTetromino();
+    document.querySelector('.score-container span').style.color = 'rgba(255, 255, 255, 0.7)';
 };
 
 //start & stop button
