@@ -16,7 +16,7 @@
 
  *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=9s)*
 
-what have I done differently other than simply following the video? 
+what have I done differently with the Tetris other than simply following the video? 
 - added some additional game features (sound effects, reset buttons, game finish score changes etc.,)
 - playable on mobile
 - design (color, font choice, button etc.,)
