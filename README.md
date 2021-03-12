@@ -11,8 +11,7 @@
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
 
 
-## The very first personal project I have chosen:     
-[Tetris](https://a331998513.github.io/practice/Tetris/) with pure javascript
+## The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/Tetris/) with pure javascript
 
 **main goal:** to feel comfortable with DOM, JS syntax and most importantly train my brain adapt to the language logic.
 
