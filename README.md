@@ -1,4 +1,4 @@
-*Full stack developer wanna be journey. Start date 19th January 2021*
+*_Full stack developer wanna be journey. Start date 19th January 2021_*
 
 ***2nd month of the journey:***
 
@@ -11,7 +11,7 @@ Free Code Camp projects:
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
 
   
-# The very first personal project I have chosen:
+## The very first personal project I have chosen:
 
 **Fully functioning tetris**
 
