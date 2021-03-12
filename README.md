@@ -13,7 +13,13 @@
 
 ## The very first personal project I have chosen:
 
-**Tetris**
+**Tetris with pure javascript**
+
+*main goal: to feel comfortable with DOM and JS syntaxs.*
+
+*process: to completly comprehend each line of code, why is it used and how it works.*
+
+*sources used help understanding: stackOverflow, Google, Youtube, w3shools*
 
   >[Tetris(JS)](https://a331998513.github.io/practice/Tetris/) -> *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
 
