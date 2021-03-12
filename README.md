@@ -29,7 +29,7 @@ well, I didn't learn much of new things but I feel more comfortable with using f
 
 - document.addEventListener('action', function)
 - document.querySelector('#yo') || document.getElementById('yo')
-- fall = setInterval (drop , 1000)  || clearInterval(fall)
+- fall = setInterval (drop , 1000) _drop is a function_ || clearInterval(fall)  
 - obj.classList.remove('') || obj.classList.add('') || obj.classList.contains('')
 - obj.style.backgroundColor = ('white') || obj.style.color = ('')
 - obj.textContent || obj.innerHTML || obj.innerText
