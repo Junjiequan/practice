@@ -284,8 +284,7 @@ const gameOver = () =>{
             }
          }
         ) 
-        if(parseInt(Scoredisplay.textContent) < 100){
-
+        if(parseInt(Scoredisplay.textContent) < 1000){
             Scoredisplay.textContent = 'NOOB'
             
         } else {
