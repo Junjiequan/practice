@@ -11,10 +11,11 @@ Free Code Camp projects:
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
 
   
+# The very first personal project I have chosen:
 
 **Fully functioning tetris**
 
-The very first personal project I have chosen:
+
 
   >[Tetris(JS)](https://a331998513.github.io/practice/Tetris/)        *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
 
