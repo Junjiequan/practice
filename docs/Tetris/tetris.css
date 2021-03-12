@@ -143,3 +143,9 @@ body{
     height:33px;
     width:100px;
 }
+.case-btn i:hover{
+    opacity:0.5;
+}
+.case-btn i:after{
+    opacity:1;
+}
