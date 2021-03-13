@@ -255,7 +255,7 @@ const scorePlus = () => {
         if(row.every(index=> square[index].classList.contains('taken'))){
             score += 100;
             Scoredisplay.textContent = score;
-            Leveldisplay.textContent = Math.floor(score/100);
+            Leveldisplay.textContent = Math.floor(score/1000);
             clearAudio();
             row.forEach(index=>{
                 square[index].classList.remove('taken')
@@ -314,7 +314,7 @@ const gameClear = ()=>{
     })
     Scoredisplay.innerHTML = 0;
     score = 0;
-    Leveldisplay.textContent = Math.floor(score/100)
+    Leveldisplay.textContent = Math.floor(score/1000);
     levelUp();
     document.querySelector('.score-container-point').style.color = 'rgba(255, 255, 255, 0.7)';
 };
@@ -322,26 +322,27 @@ const gameClear = ()=>{
 //Speed increase function
 const levelUp = () =>{
 clearInterval(dropTimer);
-if(score == 0){dropTimer = setInterval(drop,1000)}
-if(score >=100 && score < 200){dropTimer = setInterval(drop,500)}
-if(score >=200 && score < 300){dropTimer = setInterval(drop,300)}
-if(score >=300 ){dropTimer = setInterval(drop,50)}
+if(score < 1000){dropTimer = setInterval(drop,700)}
+if(score >=1000 && score < 2000){dropTimer = setInterval(drop,500)}
+if(score >=2000 && score < 3000){dropTimer = setInterval(drop,300)}
+if(score >=3000 && score < 4000){dropTimer = setInterval(drop,150)}
+if(score > 4000 ){dropTimer = setInterval(drop,20)}
 }
 
 //start & stop button
-const clickBtn = ()=>{
-    if (pauseBtn.textContent ==='Start'){
+const clickBtn = ()=>{  
+    if (pauseBtn.textContent ==='Start' ){
+        if (Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend'){
         pauseBtn.textContent = "Pause";
         draw();
         levelUp();
-        // clearInterval(dropTimer);
-        // dropTimer = setInterval(drop, 1000);
         displayMiniTetromino();
-    } else {
+        } 
+    } else if (pauseBtn.textContent ==='Pause' && typeof Scoredisplay.textContent != 'string'){
         pauseBtn.textContent = "Start";
         clearInterval(dropTimer);
-
-    }
+    } 
+    
     buttonAudio();
 } 
 // pause reset buttons

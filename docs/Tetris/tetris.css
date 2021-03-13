@@ -121,7 +121,7 @@ body{
     color:var(--bs-light);
     opacity: 0.9;
     font-weight:600;
-    background-color:rgba(236, 220, 236, 0.05)
+    background-color:rgba(236, 220, 236, 0.212)
 }
 
 .btn:hover{
