@@ -35,7 +35,8 @@ const iTetromino = [
 //select tags from html 
 const grid = document.querySelector('.grid');
 let square = Array.from(document.querySelectorAll('.grid div'));
-const Scoredisplay = document.getElementById('score');
+const Scoredisplay = document.querySelector('.score-container-point');
+const Leveldisplay = document.querySelector('.level')
 const pauseBtn = document.getElementById('start-btn');
 //sound effects
 const audio = new Audio('./tetris.mp3');
@@ -153,6 +154,7 @@ const stop = () =>{
         draw();
         displayMiniTetromino();
         scorePlus();
+        levelUp();
         gameOver();
     } 
 }
@@ -253,6 +255,7 @@ const scorePlus = () => {
         if(row.every(index=> square[index].classList.contains('taken'))){
             score += 100;
             Scoredisplay.textContent = score;
+            Leveldisplay.textContent = Math.floor(score/100);
             clearAudio();
             row.forEach(index=>{
                 square[index].classList.remove('taken')
@@ -288,7 +291,7 @@ const gameOver = () =>{
             Scoredisplay.textContent = 'NOOB'
             
         } else {
-            document.querySelector('.score-container span').style.color = 'rgba(255, 193, 24, 0.7)'
+            document.querySelector('.score-container-point').style.color = 'rgba(255, 193, 24, 0.7)'
             Scoredisplay.textContent = 'Legend'
         }
         failEffectAudio();
@@ -300,7 +303,6 @@ const gameClear = ()=>{
     square.forEach(index=> index.classList.remove('tetromino'));
     square.forEach(index=> index.classList.remove('taken'));
     square.forEach(index=> index.style.backgroundColor = '');
-    
     currentPosition = 4;
     random = Math.floor(Math.random() * theTetrominos.length);
     afterRandom = Math.floor(Math.random() * theTetrominos.length);
@@ -310,24 +312,31 @@ const gameClear = ()=>{
         index.classList.remove('mini-tetromino');
         index.style.backgroundColor= '';
     })
-    Scoredisplay.innerHTML = '0'
-    clearInterval(dropTimer);
-
-    document.querySelector('.score-container span').style.color = 'rgba(255, 255, 255, 0.7)';
+    Scoredisplay.innerHTML = 0;
+    score = 0;
+    levelUp();
+    document.querySelector('.score-container-point').style.color = 'rgba(255, 255, 255, 0.7)';
 };
-
+const levelUp = () =>{
+clearInterval(dropTimer);
+if(score == 0){dropTimer = setInterval(drop,1000)}
+if(score >=100 && score < 200){dropTimer = setInterval(drop,500)}
+if(score >=200 && score < 300){dropTimer = setInterval(drop,300)}
+if(score >=300 ){dropTimer = setInterval(drop,50)}
+}
 //start & stop button
 const clickBtn = ()=>{
     if (pauseBtn.textContent ==='Start'){
         pauseBtn.textContent = "Pause";
         draw();
-        clearInterval(dropTimer);
-        dropTimer = setInterval(drop,300)
+        levelUp();
+        // clearInterval(dropTimer);
+        // dropTimer = setInterval(drop, 1000);
         displayMiniTetromino();
     } else {
         pauseBtn.textContent = "Start";
         clearInterval(dropTimer);
-        dropTimer;
+
     }
     buttonAudio();
 } 
