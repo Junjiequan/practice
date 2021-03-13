@@ -314,6 +314,7 @@ const gameClear = ()=>{
     })
     Scoredisplay.innerHTML = 0;
     score = 0;
+    Leveldisplay.textContent = Math.floor(score/100)
     levelUp();
     document.querySelector('.score-container-point').style.color = 'rgba(255, 255, 255, 0.7)';
 };
