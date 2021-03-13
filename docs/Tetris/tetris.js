@@ -300,15 +300,19 @@ const gameClear = ()=>{
     square.forEach(index=> index.classList.remove('tetromino'));
     square.forEach(index=> index.classList.remove('taken'));
     square.forEach(index=> index.style.backgroundColor = '');
+    
     currentPosition = 4;
     random = Math.floor(Math.random() * theTetrominos.length);
     afterRandom = Math.floor(Math.random() * theTetrominos.length);
-    current = theTetrominos[random][currentRotation]
+    current = theTetrominos[random][currentRotation];
+    pauseBtn.textContent = "Start";
+    displaySquare.forEach(index=>{
+        index.classList.remove('mini-tetromino');
+        index.style.backgroundColor= '';
+    })
     Scoredisplay.innerHTML = '0'
-    draw();
     clearInterval(dropTimer);
-    dropTimer = setInterval(drop,300);
-    displayMiniTetromino();
+
     document.querySelector('.score-container span').style.color = 'rgba(255, 255, 255, 0.7)';
 };
 
