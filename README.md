@@ -23,7 +23,7 @@
 - added some additional game features (sound effects, reset buttons, game fail effects etc.,)
 - playable on mobile
 - design (color, font choice, button etc.,)
-- fixed multiple serious bugs (there were too many bugs from the original tutorial. To name one, after paused game you can still force the brick to drop by press down arrow key)
+- fixed multiple serious bugs (To name one, after paused game you can still force the brick to drop by press down arrow key. Fixed by adding condition into the arrow key)
 
 **what have I learned during the personal project?**
 
