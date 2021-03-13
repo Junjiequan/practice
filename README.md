@@ -25,7 +25,7 @@
 - design (color, font choice, button etc.,)
 - fixed multiple serious bugs (To name one, after paused game you can still force the brick to drop by press down arrow key. Fixed by adding condition into the arrow key)
 
-**what have I learned during the personal project?**
+**what have I learned building Tetris?**
 
 I feel more comfortable with using following concepts:
 
