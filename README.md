@@ -11,21 +11,23 @@
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
 
 
-## The very first personal project I have chosen:
+## The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/Tetris/) with pure javascript
 
-**Fully functioning tetris**
+**main goal:** practice DOM, JS syntax and most importantly train my brain adapt to the language logic.
 
-  >[Tetris(JS)](https://a331998513.github.io/practice/Tetris/) -> *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*
+**process:** to completly comprehend each line of code, why is it used and how it works.
+
+**sources used help understanding:** stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*.
 
 **what have I done differently with the Tetris other than simply following the video?**
 - added some additional game features (sound effects, reset buttons, game fail effects etc.,)
 - playable on mobile
 - design (color, font choice, button etc.,)
-- fixed multiple serious bugs (there were too many bugs from the original tutorial. To name one, after paused game you can still force the brick to drop by press down arrow key)
+- fixed multiple serious bugs (To name one, after paused game you can still force the brick to drop by press down arrow key. Fixed by adding condition into the arrow key)
 
-**what have I learned during the personal project?**
+**what have I learned building Tetris?**
 
-well, I didn't learn much of new things but I feel more comfortable with using following concepts:
+I feel more comfortable with using following concepts:
 
 - document.addEventListener('action', function)
 - document.querySelector('#yo') || document.getElementById('yo')
