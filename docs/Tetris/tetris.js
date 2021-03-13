@@ -40,9 +40,9 @@ const Leveldisplay = document.querySelector('.level')
 const pauseBtn = document.getElementById('start-btn');
 //sound effects
 const audio = new Audio('./tetris.mp3');
-const clearEffect = new Audio('http://www.vertigogaming.org/downloads/svencoop/sound/sc_tetris/clear.wav');
-const fallEffect = new Audio('http://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/fall.wav')
-const failEffect = new Audio('http://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/gameover.wav')
+const clearEffect = new Audio('https://www.vertigogaming.org/downloads/svencoop/sound/sc_tetris/clear.wav');
+const fallEffect = new Audio('https://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/fall.wav')
+const failEffect = new Audio('https://www.bndclan.com/Bend3r/Bend3r/hl-content/cstrike/sound/tetris/gameover.wav')
 const buttonEffect = new Audio('./Okay.mp3');
 
 //set default
@@ -318,6 +318,8 @@ const gameClear = ()=>{
     levelUp();
     document.querySelector('.score-container-point').style.color = 'rgba(255, 255, 255, 0.7)';
 };
+
+//Speed increase function
 const levelUp = () =>{
 clearInterval(dropTimer);
 if(score == 0){dropTimer = setInterval(drop,1000)}
@@ -325,6 +327,7 @@ if(score >=100 && score < 200){dropTimer = setInterval(drop,500)}
 if(score >=200 && score < 300){dropTimer = setInterval(drop,300)}
 if(score >=300 ){dropTimer = setInterval(drop,50)}
 }
+
 //start & stop button
 const clickBtn = ()=>{
     if (pauseBtn.textContent ==='Start'){
