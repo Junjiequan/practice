@@ -13,7 +13,7 @@
 
 ## The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/Tetris/) with pure javascript
 
-**main goal:** to feel comfortable with DOM, JS syntax and most importantly train my brain adapt to the language logic.
+**main goal:** practice DOM, JS syntax and most importantly train my brain adapt to the language logic.
 
 **process:** to completly comprehend each line of code, why is it used and how it works.
 
@@ -27,7 +27,7 @@
 
 **what have I learned during the personal project?**
 
-well, I didn't learn much of new things but I feel more comfortable with using following concepts:
+I feel more comfortable with using following concepts:
 
 - document.addEventListener('action', function)
 - document.querySelector('#yo') || document.getElementById('yo')
