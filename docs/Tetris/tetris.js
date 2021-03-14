@@ -140,22 +140,22 @@ document.addEventListener('keydown', control)
 // tetromino stops at the buttom
 const stop = () =>{
     let checktaken = current.some(index=> square[currentPosition + index + width].classList.contains('taken'));
-    let checkempty = current.some(index=> square[currentPosition + index + width].classList.contains('empty'))
+    let checkempty = current.some(index=> square[currentPosition + index + width].classList.contains('empty'));
+
     // if the tetromino touches buttom change div class to taken
     if(checktaken || checkempty){
         current.forEach(index => square[currentPosition + index].classList.add('taken'));
-        currentPosition -= width;
         fallEffectAudio();
         //new tetromino starts to drop
         random = afterRandom;
         afterRandom = Math.floor(Math.random() * theTetrominos.length);
         current = theTetrominos[random][currentRotation];
         currentPosition = 4;
-        draw();
         displayMiniTetromino();
         scorePlus();
         levelUp();
         gameOver();
+        draw();
     } 
 }
 // key control //left
@@ -166,6 +166,7 @@ const moveLeft = () =>{
         if(!isAtLeftEdge) currentPosition -=1 ;
         if(current.some(index=> square[currentPosition + index].classList.contains('taken'))) {
             currentPosition += 1;
+
         }
         draw();
     } else return;
@@ -182,9 +183,10 @@ const moveRight = () =>{
         draw();
     } else return;
 }
+
+
 //rotate 
 const rotate = () =>{
-    if(pauseBtn.textContent === 'Pause' && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend' ){
         undraw();
         currentRotation++
         if(currentRotation == current.length) {
@@ -193,7 +195,7 @@ const rotate = () =>{
         current = theTetrominos[random][currentRotation];
         checkRotatedPosition();
         draw();
-    } else return;
+ if (pauseBtn.textContent === 'Pause' && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend') return;
 }
 //rotationCheck      //this part is a little bit confusing, but I did comprehend it. good job. 
 const checkLeft = () =>{   // check if rotation transfered the tetromino to previous line  e.g.,   20  => 19 
@@ -202,10 +204,22 @@ const checkLeft = () =>{   // check if rotation transfered the tetromino to prev
 const checkRight = () =>{   // check if rotation transfered the tetromino to next line  e.g.,   19 => 20 
      return current.some(index=> (currentPosition + index) % width === 0)
 }
+// I wanted to build a function that checks if left side & right side has tetromino before rotate but failed 
+// const checkBlocked = () =>{
+//     const checktRightSide = current.some(index=> square[currentPosition + index + 1].classList.contains('taken'));
+//     const checktLeftSide = current.some(index=> square[currentPosition + index - 1].classList.contains('taken'));
+//     currentRotation++;
+//     if( checktRightSide && !checktLeftSide) { currentPosition -= 1;}
+//     if( checktLeftSide && !checktRightSide) { currentPosition += 1;}
+//     if(checktRightSide && checktLeftSide) {currentRotation--;}
+//     return;
+// }
+
+//this part is a little bit hard to digest as well
 const checkRotatedPosition = (position)=>{
     position = position || currentPosition  
     if((position + 1) % width < 4){ //check if currentTetromino located in right side
-        if(checkLeft()){
+        if(checkLeft()) {
             currentPosition += 1   //push back to right
             checkRotatedPosition(position)
         }
@@ -214,7 +228,7 @@ const checkRotatedPosition = (position)=>{
 // [20,21,22,23,24,25,26,27,28,29]
 // when position = 26, 26 % 10 = 6, 6 > 5, so currenTetromino on the right side
     else if (position % width > 5){     //check if currentTetromino located in left side
-        if(checkRight()){
+        if(checkRight()) {
             currentPosition -= 1  //push back to left
             checkRotatedPosition(position)
         }
@@ -250,7 +264,7 @@ const displayMiniTetromino = () =>{
 }
 // score display & remove row & add new row
 const scorePlus = () => {
-    for (let i = 0; i < 199; i += width){
+    for (let i = 0; i < 200; i += width){
         const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9];
         if(row.every(index=> square[index].classList.contains('taken'))){
             score += 100;
@@ -331,14 +345,12 @@ if(score > 4000 ){dropTimer = setInterval(drop,20)}
 
 //start & stop button
 const clickBtn = ()=>{  
-    if (pauseBtn.textContent ==='Start' ){
-        if (Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend'){
+    if (pauseBtn.textContent ==='Start' && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend' ){
         pauseBtn.textContent = "Pause";
         draw();
         levelUp();
         displayMiniTetromino();
-        } 
-    } else if (pauseBtn.textContent ==='Pause' && typeof Scoredisplay.textContent != 'string'){
+    } else if (pauseBtn.textContent ==='Pause' && Scoredisplay.textContent  !== 'NOOB' && Scoredisplay.textContent  !== 'Legend'){
         pauseBtn.textContent = "Start";
         clearInterval(dropTimer);
     } 

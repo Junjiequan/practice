@@ -19,13 +19,13 @@
 
 **sources used help understanding:** stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*.
 
-**what have I done differently with the Tetris other than simply following the video?**
+**what have I done differently with the tutorial?**
 - added some visual and audio features (sound effects, game fail effects etc.,)
-- added level feature (increased tetromino falling speed based on score)
+- added level feature (increase tetromino falling speed based on score)
 - added reset all button
 - playable on mobile
 - design (color, font choice, button etc.,)
-- fixed multiple serious bugs (To name one, after paused game you can still force the brick to drop by press down arrow key. Fixed by adding condition into the arrow key)
+- fixed multiple bugs (To name one, after paused game you can still force the brick to drop by press down arrow key. Fixed by adding condition into the arrow key)
 
 **what have I learned building Tetris?**
 
