@@ -154,8 +154,9 @@ const stop = () =>{
         displayMiniTetromino();
         scorePlus();
         levelUp();
-        gameOver();
         draw();
+        gameOver();
+        
     } 
 }
 // key control //left
