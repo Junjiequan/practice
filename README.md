@@ -20,7 +20,7 @@
 **sources used help understanding:** stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*.
 
 **what have I done differently with the tutorial?**
-- added some visual and audio features (sound effects, game fail effects etc.,)
+- added visual and audio features (sound effects, game fail effects etc.,)
 - added level feature (increase tetromino falling speed based on score)
 - added reset all button
 - playable on mobile
