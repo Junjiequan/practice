@@ -15,11 +15,9 @@
 
 **main goal:** practice DOM, JS syntax and most importantly train my brain adapt to the language logic.
 
-**process:** to completly comprehend each line of code, why is it used and how it works.
+**sources used help building:** stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*.
 
-**sources used help understanding:** stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*.
-
-**what have I done differently with the tutorial?**
+**what have I done differently compare to the tutorial?**
 - added visual and audio features (sound effects, game fail effects etc.,)
 - added level feature (increase tetromino falling speed based on score)
 - added reset all button
