@@ -12,6 +12,8 @@
 
 
 ## The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/Tetris/) with pure javascript
+![image](https://user-images.githubusercontent.com/78078898/111630014-31aa1e80-87f2-11eb-89f0-f2f015d0bb7b.png)
+
 
 **main goal:** practice DOM, JS syntax and most importantly train my brain adapt to the language logic.
 
