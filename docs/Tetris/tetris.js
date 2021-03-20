@@ -341,7 +341,8 @@ if(score < 1000){dropTimer = setInterval(drop,700)}
 if(score >=1000 && score < 2000){dropTimer = setInterval(drop,500)}
 if(score >=2000 && score < 3000){dropTimer = setInterval(drop,300)}
 if(score >=3000 && score < 4000){dropTimer = setInterval(drop,150)}
-if(score > 4000 ){dropTimer = setInterval(drop,20)}
+if(score >=4000 && score < 5000 ){dropTimer = setInterval(drop,20)}
+if(score >=5000 && score < 99999 ){dropTimer = setInterval(drop,1)}
 }
 
 //start & stop button
