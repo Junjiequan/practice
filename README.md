@@ -11,7 +11,7 @@
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
 
 
-## I'm probably gonna redo all the Free code camp projects again below here soon.
+## I'm probably gonna redo all the Free code camp projects again with pure javascript below here soon.
 
 >coming soon.
 
