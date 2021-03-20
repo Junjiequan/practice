@@ -47,7 +47,6 @@ const buttonEffect = new Audio('./Okay.mp3');
 
 //set default
 let score = 0;
-let dropTimer;
 //tetromino
 const theTetrominos = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
 //tetromino's color
