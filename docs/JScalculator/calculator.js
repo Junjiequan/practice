@@ -13,7 +13,7 @@ const getOutputNum = () =>{
 }
 const printOutputNum = (num) =>{
     if(num == '') outputNum.innerText = num;
-    else outputNum.innerText = formatNum(num);
+    else outputNum.innerText = formatNum(num).substring(0,11);
 }
 const formatNum = (num) =>{
     let typeNumber = Number(num);
@@ -26,22 +26,32 @@ const reverseformatNum = (num) =>{
 
 //control section
 const getNumArrays = Array.from(document.getElementsByClassName('number'));
-const getSymArrays = Array.from(document.getElementsByClassName('symbols'));
+const getSOperatorArrays = Array.from(document.getElementsByClassName('operator'));
+const getSymArrays = Array.from(document.getElementsByClassName('symbols'))
 
 
-const keyBoardSym = ()=>{
+const keyBoardOperator = ()=>{
+    getSOperatorArrays.map((operator) =>{
+        operator.addEventListener('click',()=>{
+            outputNum.innerText += operator.innerText
+        })
+    })
+}
+const keyBoardSym = () =>{
     getSymArrays.map((symbols) =>{
-        symbols.addEventListener('click',()=>{
-            alert('clicked:'+ symbols.id);
+        symbols.addEventListener('click', ()=>{
+            printOutputNum('');
         })
     })
 }
 const keyBoardNum = () =>{
     getNumArrays.map((numbers)=>{
-        numbers.addEventListener('click',()=>{
-                alert("clicked: "+ numbers.id)
+        numbers.addEventListener('click', ()=>{
+            let convertStrToNum = reverseformatNum()
+
             })
         })
     } 
 keyBoardNum();
+keyBoardOperator();
 keyBoardSym();
