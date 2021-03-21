@@ -66,8 +66,15 @@ const keyBoardOperator = () =>{
 const keyBoardSym = () =>{
     getSymArrays.map((symbols) =>{
         symbols.addEventListener('click', ()=>{
-            printOutputNum('');
-            printPrevNumber('');
+            if(symbols.id == 'clear'){
+                printOutputNum('');
+                printPrevNumber('');
+            }
+            else if(symbols.id == 'clearEach'){
+                let outputNum = reverseformatNum(getOutputNum());
+                let result = outputNum.slice(0,-1);
+                printOutputNum(result);
+            }
         })
     })
 }
