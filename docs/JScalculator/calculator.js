@@ -13,7 +13,7 @@ const getOutputNum = () =>{
 }
 const printOutputNum = (num) =>{
     if(num == '') outputNum.innerText = num;
-    else outputNum.innerText = formatNum(num).substring(0,11);
+    else outputNum.innerText = formatNum(num);
 }
 const formatNum = (num) =>{
     let typeNumber = Number(num);
@@ -47,8 +47,9 @@ const keyBoardSym = () =>{
 const keyBoardNum = () =>{
     getNumArrays.map((numbers)=>{
         numbers.addEventListener('click', ()=>{
-            let convertStrToNum = reverseformatNum()
-
+            let convertStrToNum = reverseformatNum(getOutputNum());
+                convertStrToNum += numbers.innerText;
+                printOutputNum(convertStrToNum);
             })
         })
     } 
