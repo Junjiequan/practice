@@ -1,6 +1,5 @@
 const historyNum = document.getElementById('inputsave');
 const outputNum = document.getElementById('output');
-console.log(historyNum.innerText);
 // Output section
 const getPrevNumber = () =>{
     return historyNum.innerText;
@@ -13,9 +12,12 @@ const getOutputNum = () =>{
 }
 const printOutputNum = (num) =>{
     if(num == '') outputNum.innerText = num;
-    else outputNum.innerText = formatNum(num);
+    else if(outputNum.innerText.length <= 14){
+        return outputNum.innerText = formatNum(num)
+    }
 }
 const formatNum = (num) =>{
+    if(isNaN(num)) return '';
     let typeNumber = Number(num);
     let value = typeNumber.toLocaleString('en');
     return value;
@@ -23,11 +25,10 @@ const formatNum = (num) =>{
 const reverseformatNum = (num) =>{
     return num.replace(/,/g,'');
 }
-
 //controlKey section
 const getNumArrays = Array.from(document.getElementsByClassName('number'));
 const getSOperatorArrays = Array.from(document.getElementsByClassName('operator'));
-const getSymArrays = Array.from(document.getElementsByClassName('symbols'))
+const getSymArrays = Array.from(document.getElementsByClassName('symbols'));
 
 const keyBoardOperator = () =>{
     getSOperatorArrays.map((operator) =>{
@@ -39,13 +40,20 @@ const keyBoardOperator = () =>{
                  if(operator.innerText == '='){
                     if(!isNaN(prevNum[prevNum.length-1])){
                         let result = eval(prevNum);
-                        printOutputNum(result)
-                        printPrevNumber('');
+                        let resultString = result.toString();
+                        if(resultString.length >= 14 ){
+                             printOutputNum(resultString.slice(0,13));
+                             printPrevNumber('');
+                        } else {
+                            printOutputNum(result);
+                            printPrevNumber('');
+                            outputNum.classList.add('occupied')
+                        }
                     }  
                  }  else {
                     prevNum = prevNum + operator.innerText
-                    printPrevNumber(prevNum)
-                    printOutputNum('')
+                    printPrevNumber(prevNum);
+                    printOutputNum('');
                  }
             }else if (outputNum == ''){
                 if(operator.innerText != '='){
@@ -53,10 +61,10 @@ const keyBoardOperator = () =>{
                     let replaceLast = savedNum.slice(0,-1);
                     printPrevNumber(replaceLast + operator.innerText);
                 } else {
-                    let replaceLast = prevNum.slice(0,-1);
+                    let replaceLast = prevNum.slice(0,-1);  
                     let result = eval(replaceLast);
                     printOutputNum(result);
-                    printPrevNumber('')
+                    printPrevNumber('');
                 }
             }
 
@@ -79,13 +87,19 @@ const keyBoardSym = () =>{
     })
 }
 const keyBoardNum = () =>{
-    getNumArrays.map((numbers)=>{
-        numbers.addEventListener('click', ()=>{
-            let flattenNumber = reverseformatNum(getOutputNum());
-            flattenNumber += numbers.innerText;
-                printOutputNum(flattenNumber);
+        getNumArrays.map((numbers)=>{
+            numbers.addEventListener('click', ()=>{
+                if(outputNum.classList.contains('occupied')){
+                    outputNum.classList.remove('occupied');
+                    printOutputNum('');
+                    printOutputNum(numbers.innerText);
+                }   else {
+                    let flattenNumber = reverseformatNum(getOutputNum());
+                    flattenNumber += numbers.innerText;
+                    printOutputNum( flattenNumber );
+                }
+                })
             })
-        })
     } 
 keyBoardNum();
 keyBoardOperator();

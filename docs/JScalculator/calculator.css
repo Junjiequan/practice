@@ -37,9 +37,11 @@ body{
 .container-output{
     width:100%;
     height:140px;
-    background-color:rosybrown;
+    background-color:rgb(48, 48, 48);
     padding:1.5rem 2rem;  
     text-align:right;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
 }
 .result{
     margin: 4px 0;
@@ -47,49 +49,61 @@ body{
 .container-output :nth-child(1){
     font-size:1.3rem;
     height:40px;
+    color: #fff;
 }
 .container-output :nth-child(2){
     font-size:35px;
     height:80px;
+    color: #fff;
 }
 
 .type-part{
     padding:10px 20px;
 }
 .symbols, .number, .operator{
-    font-size:1.3rem;
+    font-size:1.5rem;
     width:50px;
     height:50px;
     margin:15px;
     float:left;
-    border-radius:18px;
+    border-radius:25px;
     text-align:center;
     background:none;
+    transition: all 0.2s ease-in-out;
 }
-#zero{
+.number:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.4);
+    color:tomato;
+}
+.symbols:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.4);
+    color:rgb(168, 144, 35);
+}
+button:nth-child(17){
     width: 210px;
 }
-.type-part :nth-child(4){
-    background:#A52A2A;
-    color:white;
+.type-part :nth-child(3),
+.type-part :nth-child(4),
+.type-part :nth-child(8),
+.type-part :nth-child(12),
+.type-part :nth-child(16),
+.type-part :nth-child(18)
+{
+    font-size:1.6rem;
+    font-weight:bold;
+    transition: all 0.2s ease-in-out;
+    color:#000;
 }
-.type-part :nth-child(8){
-    background:#FFA500;
-    color:white;
-}
-.type-part :nth-child(12){
-    background:#6495ED;
-    color:white;
-}
-.type-part :nth-child(16){
-    background:#A52A2A;
-    color:white;
-}
-.type-part :nth-child(16){
-    background:#483D8B;
-    color:white;
-}
-.type-part :nth-child(18){
-    background:#000;
-    color:white;
+.type-part :nth-child(3):hover,
+.type-part :nth-child(4):hover,
+.type-part :nth-child(8):hover,
+.type-part :nth-child(12):hover,
+.type-part :nth-child(16):hover,
+.type-part :nth-child(18):hover
+{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.5);
+    color:#a02727;
 }
