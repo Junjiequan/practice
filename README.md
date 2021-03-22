@@ -2,7 +2,7 @@
 
 ***2nd month of the journey:***
 
-## Free Code Camp projects:
+## Free Code Camp projects display:
 
   >[quote machine(React)](https://a331998513.github.io/practice/quote_machine/)  |
   >[previewer (JS)](https://a331998513.github.io/practice/previewer/)  |
