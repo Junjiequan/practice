@@ -1,4 +1,4 @@
-*_Full stack developer wanna be journey. Start date 19th January 2021_*
+*Full stack developer wanna be journey. Start date 19th January 2021*
 
 ***2nd month of the journey:***
 
