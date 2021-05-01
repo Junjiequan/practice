@@ -38,7 +38,7 @@ stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.
 
 I feel more comfortable with using following concepts:
 
-- document.addEventListener('action', function)||
+- document.addEventListener('action', function) ||
 - document.querySelector('#yo') || document.getElementById('yo')
 - fall = setInterval (drop , 1000) _drop is a function_ || clearInterval(fall)  
 - Element.classList.remove('') || Element.classList.add('') || Element.classList.contains('')
