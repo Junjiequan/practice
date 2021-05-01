@@ -4,18 +4,18 @@
 
 ## Free Code Camp projects display:
 
-  >[quote machine(React)](https://a331998513.github.io/practice/quote_machine/)  |
-  >[previewer (JS)](https://a331998513.github.io/practice/previewer/)  |
-  >[drum machine (React.hooks)](https://a331998513.github.io/practice/drum_machine/)  |
-  >[calculator (React.hooks)](https://a331998513.github.io/practice/calculator/)  |
-  >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/clock/)
+  >[quote machine(React)](https://a331998513.github.io/practice/docs/quote_machine/)  |
+  >[previewer (JS)](https://a331998513.github.io/practice/docs/previewer/)  |
+  >[drum machine (React.hooks)](https://a331998513.github.io/practice/docs/drum_machine/)  |
+  >[calculator (React.hooks)](https://a331998513.github.io/practice/docs/calculator/)  |
+  >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/docs/clock/)
 
 
 ##### I'm probably gonna redo all the Free code camp projects again with pure javascript and put link below here soon.
 
 >coming soon. Nah, actually I created new folder to redo
 
-# The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/Tetris/) with pure javascript
+# The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/docs/Tetris/) with pure javascript
 ![image](https://user-images.githubusercontent.com/78078898/111630014-31aa1e80-87f2-11eb-89f0-f2f015d0bb7b.png)
 
 
@@ -38,7 +38,7 @@ stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.
 
 I feel more comfortable with using following concepts:
 
-- document.addEventListener('action', function)
+- document.addEventListener('action', function)||
 - document.querySelector('#yo') || document.getElementById('yo')
 - fall = setInterval (drop , 1000) _drop is a function_ || clearInterval(fall)  
 - Element.classList.remove('') || Element.classList.add('') || Element.classList.contains('')
