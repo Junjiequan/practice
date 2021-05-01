@@ -15,18 +15,18 @@
 
 >coming soon. Nah, actually I created new folder to redo
 
-## The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/Tetris/) with pure javascript
+# The very first personal project I have chosen:      [Tetris(JS)](https://a331998513.github.io/practice/Tetris/) with pure javascript
 ![image](https://user-images.githubusercontent.com/78078898/111630014-31aa1e80-87f2-11eb-89f0-f2f015d0bb7b.png)
 
 
-# main goal
+## main goal
 
 practice DOM, JS syntax and most importantly train my brain adapt to the language logic.
 
-# sources used help building
+## sources used help building
 stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.youtube.com/watch?v=w1JJfK09ujQ&t=4610s)*.
 
-## what have I done differently compare to the tutorial?
+### what have I done differently compare to the tutorial?
 - added visual and audio features (sound effects, game fail effects etc.,)
 - added level feature (increase tetromino falling speed based on score)
 - added reset all button
@@ -34,7 +34,7 @@ stackOverflow, Google, Youtube, w3shools, *[original tutorial link](https://www.
 - design (color, font choice, button etc.,)
 - fixed multiple bugs (To name one, after paused game you can still force the brick to drop by press down arrow key. Fixed by adding condition into the arrow key)
 
-## what have I learned building Tetris?
+### what have I learned building Tetris?
 
 I feel more comfortable with using following concepts:
 
