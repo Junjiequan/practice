@@ -4,10 +4,10 @@
 
 ## Free Code Camp projects display:
 
-  >[quote machine(React)](https://a331998513.github.io/practice/docs/quote_machine/)  |
-  >[previewer (JS)](https://a331998513.github.io/practice/docs/previewer/)  |
-  >[drum machine (React.hooks)](https://a331998513.github.io/practice/docs/drum_machine/)  |
-  >[calculator (React.hooks)](https://a331998513.github.io/practice/docs/calculator/)  |
+  >[quote machine(React)](https://a331998513.github.io/practice/docs/quote_machine/) |
+  >[previewer (JS)](https://a331998513.github.io/practice/docs/previewer/) |
+  >[drum machine (React.hooks)](https://a331998513.github.io/practice/docs/drum_machine/) |
+  >[calculator (React.hooks)](https://a331998513.github.io/practice/docs/calculator/) |
   >[pomodoro clock(React.hooks)](https://a331998513.github.io/practice/docs/clock/)
 
 
