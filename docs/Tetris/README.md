@@ -1,5 +1,4 @@
 ## The first javascript game I've built by following tutorial. I added bunch of new features though.  [Tetris(JS)](https://a331998513.github.io/practice/docs/Tetris/)
-![image](https://user-images.githubusercontent.com/78078898/111630014-31aa1e80-87f2-11eb-89f0-f2f015d0bb7b.png)
 
 
 ### main goal
